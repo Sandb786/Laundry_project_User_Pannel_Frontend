@@ -22,7 +22,7 @@ export default function ImageCard()
   }, []);
 
   return (
-    <div className="p-4 mt-23">
+    <div className="p-4 mt-22">
       <div className="relative h-60 md:h-80 max-w-full mx-auto overflow-hidden rounded-lg shadow-lg">
         <AnimatePresence mode="wait">
           <motion.img
