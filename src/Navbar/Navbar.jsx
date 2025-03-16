@@ -2,7 +2,8 @@ import { Home, ShoppingBag, User, ClipboardList } from "lucide-react";
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-export default function Navbar() {
+export default function Navbar() 
+{
   const [active, setActive] = useState("Home"); // Track active button
 
   const navItems = [
@@ -31,7 +32,7 @@ export default function Navbar() {
             <motion.div
               layoutId="activeIndicator"
               className="absolute -bottom-2 w-10 h-1 bg-cyan-700 rounded-full"
-              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              transition={{ type: "spring", stiffness: 500, damping: 20 }}
             />
           )}
         </div>
