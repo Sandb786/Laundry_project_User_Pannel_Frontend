@@ -12,7 +12,7 @@ export default function Services() {
   ];
 
   return (
-    <div className='p-5  mb-15'>
+    <div className='p-5 mb-20'>
       
       <div className='min-h-fit bg-gray-100 border-1 border-white rounded-2xl flex flex-col items-center py-10'>
 

@@ -22,8 +22,8 @@ export default function ImageCard()
   }, []);
 
   return (
-    <div className="p-4">
-      <div className="relative h-50 md:h-80 max-w-full mx-auto overflow-hidden rounded-lg shadow-lg">
+    <div className="p-4 mt-18">
+      <div className="relative h-65 md:h-80 max-w-full mx-auto overflow-hidden rounded-lg shadow-lg">
         <AnimatePresence mode="wait">
           <motion.img
             key={index}

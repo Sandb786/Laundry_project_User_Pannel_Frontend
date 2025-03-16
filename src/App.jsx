@@ -3,6 +3,7 @@ import './App.css'
 import Navbar from './Navbar/Navbar'
 import ImageCard from './Home/ImageCard'
 import Services from './Home/Services/Services'
+import Hadder from './Navbar/Hadder'
 
 function App() {
  
@@ -12,6 +13,7 @@ function App() {
     <ImageCard/>
     <Services/>
     <Navbar/>
+    <Hadder/>
     </>
   )
 }
