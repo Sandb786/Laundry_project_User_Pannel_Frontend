@@ -5,11 +5,11 @@ export default function Hadder({ laundryName, laundryId, shopInfo }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 w-full bg-gray-50 p-4 shadow-md flex items-center z-10">
+    <header className="fixed top-0 left-0 w-full bg-gray-50 p-3 shadow-md flex items-center z-10">
 
       <div className="flex">
 
-        <img src="/Color_Laundry/Navigation.png" className="w-11 h-12 mt-1 mr-1" />
+        <img src="/Color_Laundry/Navigation.png" className="w-11 h-12 mt-1 -ml-1" />
 
         <div>
           <h1 className="text-xl font-bold text-gray-800">Mahawat Laundry </h1>
