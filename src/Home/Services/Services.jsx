@@ -29,14 +29,14 @@ export default function Services() {
           {services.map((service, index) => (
             <motion.div
               key={index}
-              className="w-42 p-4 bg-white border-4 border-white shadow-xl shadow-gray-300 rounded-2xl flex flex-col items-center cursor-pointer"
+              className="w-36 p-4 bg-white border-4 border-white shadow-xl shadow-gray-300 rounded-2xl flex flex-col items-center cursor-pointer"
               onClick={() => handleClick(index)}
               initial={{ scale: 1 }}
               animate={{ scale: selected === index ? 0.85 : 1 }}
               transition={{ type: "spring", stiffness: 300, damping: 10 }}
             >
-              <img src={service.image} alt={service.name} className="h-24 w-24 mb-3" />
-              <Typography className="text-lg font-semibold text-gray-700 text-center">
+              <img src={service.image} alt={service.name} className="h-20 w-20 mb-3" />
+              <Typography className="text-sm font-semibold text-gray-700 text-center">
                 {service.name}
               </Typography>
             </motion.div>
