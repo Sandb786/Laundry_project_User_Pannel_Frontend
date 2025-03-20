@@ -20,22 +20,23 @@ export default function Services() {
 
   return (
     <div className="p-5 mb-20">
-      <div className="min-h-fit bg-gray-100 border-1 border-white rounded-2xl flex flex-col items-center py-10">
-        <Typography variant="lead" className="text-3xl font-bold text-gray-800 mb-6">
+      <div className="min-h-fit bg-gray-100 border border-white rounded-2xl flex flex-col items-center py-10 w-full">
+        <Typography variant="lead" className="text-3xl font-bold text-gray-800 mb-6 text-center">
           Our Services
         </Typography>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+        {/* Grid: 2 Columns for Mobile, 3 for Medium+ Screens */}
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 w-full max-w-lg sm:max-w-xl md:max-w-3xl px-4">
           {services.map((service, index) => (
             <motion.div
               key={index}
-              className="w-36 p-4 bg-white border-4 border-white shadow-xl shadow-gray-300 rounded-2xl flex flex-col items-center cursor-pointer"
+              className="w-full max-w-[160px] mx-auto p-4 bg-white border-4 border-white shadow-xl shadow-gray-300 rounded-2xl flex flex-col items-center cursor-pointer"
               onClick={() => handleClick(index)}
               initial={{ scale: 1 }}
               animate={{ scale: selected === index ? 0.85 : 1 }}
               transition={{ type: "spring", stiffness: 300, damping: 10 }}
             >
-              <img src={service.image} alt={service.name} className="h-20 w-20 mb-3" />
+              <img src={service.image} alt={service.name} className="h-22 w-22 sm:h-24 sm:w-24 mb-3" />
               <Typography className="text-sm font-semibold text-gray-700 text-center">
                 {service.name}
               </Typography>
