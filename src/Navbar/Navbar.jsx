@@ -1,16 +1,18 @@
 import { Home, ShoppingBag, User, ClipboardList } from "lucide-react";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 export default function Navbar() 
 {
   const [active, setActive] = useState("Home"); // Track active button
+  const navigate = useNavigate();
 
   const navItems = [
-    { label: "Home", icon: <Home size={24} /> },
-    { label: "Orders", icon: <ShoppingBag size={24} /> },
-    { label: "Services Price", icon: <ClipboardList size={24} /> },
-    { label: "Profile", icon: <User size={24} /> },
+    { label: "Home", icon: <Home size={24}/> , link:'/' },
+    { label: "Orders", icon: <ShoppingBag size={24} /> , link:'/order'},
+    { label: "Services Price", icon: <ClipboardList size={24} /> , link:'/' },
+    { label: "Profile", icon: <User size={24} /> , link:'#'},
   ];
 
   return (
@@ -21,7 +23,7 @@ export default function Navbar()
             className={`flex flex-col items-center ${
               active === item.label ? "text-cyan-700" : "text-gray-700"
             } hover:text-cyan-700 transition cursor-pointer`}
-            onClick={() => setActive(item.label)}
+            onClick={() =>{setActive(item.label); navigate(item.link)}}
           >
             {item.icon}
             <span className="text-xs mt-1">{item.label}</span>

@@ -34,7 +34,7 @@ export default function Services() {
               onClick={() => handleClick(index)}
               initial={{ scale: 1 }}
               animate={{ scale: selected === index ? 0.85 : 1 }}
-              transition={{ type: "spring", stiffness: 300, damping: 10 }}
+              transition={{ type: "spring", stiffness: 800, damping: 10 }}
             >
               <img src={service.image} alt={service.name} className="h-22 w-22 sm:h-24 sm:w-24 mb-3" />
               <Typography className="text-sm font-semibold text-gray-700 text-center">

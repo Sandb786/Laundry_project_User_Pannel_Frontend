@@ -1,30 +1,30 @@
-import { useState } from 'react'
-import './App.css'
-import Navbar from './Navbar/Navbar'
-import ImageCard from './Home/ImageCard'
-import Services from './Home/Services/Services'
-import Hadder from './Navbar/Hadder'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import './App.css';
+import Navbar from './Navbar/Navbar';
+import ImageCard from './Home/ImageCard';
+import Services from './Home/Services/Services';
+import Hadder from './Navbar/Hadder';
+import Order_Home from './Order/Order_Home';
 
 function App() {
- 
-
   return (
-    <>
-    <ImageCard/>
-    <Services/>
-    <Navbar/>
-    <Hadder/>
-    </>
-  )
+    <Router> {/* ✅ ( BrowserRouter as Router) Wrap everything inside Router */}
+      <>
+
+       
+
+        <Routes> {/* Routes for navigation */}
+
+          <Route path="/" element={<> <Hadder /> <ImageCard /> <Services/></>} />
+          <Route path='/order' element={<Order_Home/>}/>
+
+        </Routes>
+        
+        <Navbar />
+
+      </>
+    </Router>
+  );
 }
 
-export default App
-
-{/* <div className='w-3xl grid-cols-3 grid  mx-auto'>
-<img src="/Color_Laundry/Dry_clean.png" alt="" />
-<img src="/Color_Laundry/Steam_press.png" alt="" />
-<img src="/Color_Laundry/Normal_press.png" alt="" />
-<img src="/Color_Laundry/Roll_press.png" alt="" />
-<img src="/Color_Laundry/Laundry.png" alt="" />
-<img src="/Color_Laundry/Stain_Remove.png" alt="" />
-</div> */}
+export default App;
