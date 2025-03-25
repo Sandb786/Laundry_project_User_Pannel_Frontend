@@ -106,13 +106,13 @@ function ClothForm() {
                   {item.type} - {item.quantity}
                 </span>
                 <div className="flex gap-2 items-center">
-                  <button onClick={() => handleIncrement(index)} className="text-white hover:text-gray-900 bg-green-700 rounded-2xl">
+                  <button onClick={() => handleIncrement(index)} className="text-white bg-green-700 rounded-2xl">
                     <Plus size={18} />
                   </button>
                   <button onClick={() => handleDecrement(index)} className="text-white bg-red-600 rounded-2xl">
                     <Minus size={18} />
                   </button>
-                  <button onClick={() => handleRemove(index)} className="text-white hover:text-gray-200 bg-orange-600 rounded-md p-1">
+                  <button onClick={() => handleRemove(index)} className="text-orange-600 rounded-md p-1">
                     <Trash size={20} />
                   </button>
                 </div>
