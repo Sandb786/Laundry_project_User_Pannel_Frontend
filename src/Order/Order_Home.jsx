@@ -6,9 +6,9 @@ import React from 'react'
 
 export default function Order_Home() {
   return (
-    <div className='bg-gray-50'>
+    <div className='bg-white'>
 
-      <header className='bg-gray-100 p-2 py-3 flex gap-5  shadow-lg'>
+      <header className='bg-gray-50 sticky z-10 top-0 p-2 py-3 flex gap-5  shadow-md'>
         <a href="/"> <Button className='text-black p-2'><ArrowLeft /></Button></a>
         <Typography variant='lead' className='text-2xl md:text-3xl'>
           Order Summry
@@ -17,7 +17,7 @@ export default function Order_Home() {
 
       <div className='p-5 grid gap-10'>   {/* Main Div Containeer */}
 
-        <div className='bg-gray-100 mt-2 p-3 shadow-lg border border-gray-300 rounded-2xl flex gap-4'>
+        <div className='bg-gray-50 mt-2 p-3 shadow-md border border-gray-300 rounded-2xl flex gap-4'>
           <div className='px-2 p-2 bg-gray-200 w-15 rounded-2xl'>
             <img src="/Color_Laundry/Normal_press.png" alt="" className='w-12' />
           </div>
@@ -89,30 +89,31 @@ export default function Order_Home() {
 
       <form onSubmit={handleSubmit} className="space-y-4">
         {/* Cloth Type Dropdown */}
-        <div className="flex flex-col">
+        <div className="flex flex-col bg-white p-3 rounded-md shadow-sm"> 
           <label className="text-gray-600 font-medium">Cloth Type:</label>
           <select
             value={clothType}
             onChange={(e) => setClothType(e.target.value)}
-            className="p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="p-3 border-b-2  focus:outline-none text-lg focus:border-b-3 focus:border-cyan-800"
           >
-            <option value="">Select Cloth Type</option>
+            <option value="" ></option>
             <option value="Shirt">Shirt</option>
             <option value="Pants">Pants</option>
             <option value="Jacket">Jacket</option>
             <option value="Towel">Towel</option>
+            <option value="Towel">demo</option>
           </select>
         </div>
 
         {/* Cloth Quantity Input */}
-        <div className="flex flex-col">
+        <div className="flex flex-col bg-white p-3 rounded-md shadow-sm">
           <label className="text-gray-600 font-medium">Cloth Quantity:</label>
           <input
             type="number"
             value={clothQuantity}
             onChange={(e) => setClothQuantity(e.target.value)}
             placeholder="Enter quantity"
-            className="p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="p-3 border-b-2  focus:outline-none text-lg focus:border-b-3 focus:border-cyan-800"
           />
         </div>
 
