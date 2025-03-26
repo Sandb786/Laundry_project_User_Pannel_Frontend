@@ -150,8 +150,8 @@ function ScheduleForm() {
       <div className="bg-white p-5 rounded-md shadow-sm">
         <Typography>What would you like your clothes to be picked up?</Typography>
 
-        <div className="grid grid-cols-5 gap-15">
-          {[...Array(5)].map((_, i) => 
+        <div className="grid grid-cols-3 gap-3">
+          {[...Array(4)].map((_, i) => 
           {
             const newDate = new Date();
             newDate.setDate(today.getDate() + i);
