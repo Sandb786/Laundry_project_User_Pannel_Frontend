@@ -167,6 +167,15 @@ function ScheduleForm() {
             );
           })}
         </div>
+
+        <Typography>What would you like your clothes to be picked up?</Typography>
+        <div className="grid grid-cols-2 mt-5">
+
+        <div className='text-cyan-800 border w-fit p-1 rounded-md mt-5'>12:00 - 01:00 PM</div>
+        <div className='text-cyan-800 border w-fit p-1 rounded-md mt-5'>12:00 - 01:00 PM</div>
+        <div className='text-cyan-800 border w-fit p-1 rounded-md mt-5'>12:00 - 01:00 PM</div>
+        <div className='text-cyan-800 border w-fit p-1 rounded-md mt-5'>12:00 - 01:00 PM</div>
+        </div>
       </div>
     </div>
   );
