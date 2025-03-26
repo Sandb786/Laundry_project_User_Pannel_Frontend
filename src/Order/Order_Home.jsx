@@ -147,19 +147,20 @@ function ScheduleForm() {
     <div className="w-full bg-gray-100 p-6 mt-2 shadow-lg rounded-2xl">
       <h2 className="text-2xl font-semibold text-gray-700 text-center mb-4">Schedule Order</h2>
 
-      <div className="bg-white p-3 rounded-md shadow-sm">
+      <div className="bg-white p-5 rounded-md shadow-sm">
         <Typography>What would you like your clothes to be picked up?</Typography>
 
-        <div className="grid grid-cols-5 gap-3">
-          {[...Array(5)].map((_, i) => {
+        <div className="grid grid-cols-5 gap-15">
+          {[...Array(5)].map((_, i) => 
+          {
             const newDate = new Date();
             newDate.setDate(today.getDate() + i);
             return (
               <div
                 key={i}
-                className="bg-gray-50 p-3 rounded-md shadow-sm mx-auto text-center mt-5 border-2 border-cyan-800"
+                className="bg-gray-50 p-3 rounded-md shadow-sm text-center mt-5 border-2 border-cyan-800"
               >
-                <Typography className="text-cyan-800 font-semibold">
+                <Typography className="text-cyan-800 font-semibold text-lg">
                   {days[newDate.getDay()]} <br /> {newDate.getDate()}
                 </Typography>
               </div>
