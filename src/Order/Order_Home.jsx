@@ -4,10 +4,12 @@ import { useState } from "react";
 
 import React from 'react'
 
+
+
 export default function Order_Home() {
   return (
     <div className='bg-white'>
-      <header className='bg-gray-50 sticky z-10 top-0 p-2 py-3 flex gap-5 shadow-md'>
+      <header className='bg-gray-50 sticky z-10 top-0 p-2 py-3 flex gap-5 shadow-sm'>
         <a href="/"> <Button className='text-black p-2'><ArrowLeft /></Button></a>
         <Typography variant='lead' className='text-2xl md:text-3xl'>
           Order Summary
@@ -28,9 +30,20 @@ export default function Order_Home() {
         </div>
         <div className='grid md:grid-cols-2 gap-6'>
           {ClothForm()}
-          <div className='bg-gray-100 mt-2 p-20 shadow border'>
-            <h1>Order Summary</h1>
+          {ScheduleForm()}
+
+          <div className='w-full bg-gray-100 p-10 shadow-lg rounded-2xl mb-20'>
+            <h2 className='text-2xl font-semibold text-gray-700 text-center mb-4'>Payment</h2>
+            <div className='flex flex-col bg-white p-3 rounded-md shadow-sm'>
+              <label className='text-gray-600 font-medium'>Payment Method:</label>
+              <select className='p-3 border-b-2 text-lg'>
+                <option value=''>Select Payment Method</option>
+                <option value=''>Cash On Delivery</option>
+                <option value=''>Online Payment</option>
+              </select>
+            </div>
           </div>
+
         </div>
       </div>
     </div>
@@ -64,7 +77,7 @@ function ClothForm() {
 
   return (
     <div className="w-full mx-auto mt-2 bg-gray-100 p-10 shadow-lg rounded-2xl md:mb-20">
-      <h2 className="text-2xl font-semibold text-gray-700 text-center mb-4">Add Clothes</h2>
+      <Typography className="text-2xl font-semibold text-gray-700 text-center mb-4">Add Clothes</Typography>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div className="flex flex-col bg-white p-3 rounded-md shadow-sm">
           <label className="text-gray-600 font-medium">Cloth Type:</label>
@@ -106,10 +119,10 @@ function ClothForm() {
                   {item.type} - {item.quantity}
                 </span>
                 <div className="flex gap-2 items-center">
-                  <button onClick={() => handleIncrement(index)} className="text-white bg-green-700 rounded-2xl">
+                  <button onClick={() => handleIncrement(index)} className="text-white bg-green-700 rounded">
                     <Plus size={18} />
                   </button>
-                  <button onClick={() => handleDecrement(index)} className="text-white bg-red-600 rounded-2xl">
+                  <button onClick={() => handleDecrement(index)} className="text-white bg-red-600 rounded">
                     <Minus size={18} />
                   </button>
                   <button onClick={() => handleRemove(index)} className="text-orange-600 rounded-md p-1">
@@ -120,6 +133,39 @@ function ClothForm() {
             ))}
           </ul>
         )}
+      </div>
+    </div>
+  );
+}
+
+
+function ScheduleForm() {
+  const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  const today = new Date();
+
+  return (
+    <div className="w-full bg-gray-100 p-6 mt-2 shadow-lg rounded-2xl">
+      <h2 className="text-2xl font-semibold text-gray-700 text-center mb-4">Schedule Order</h2>
+
+      <div className="bg-white p-3 rounded-md shadow-sm">
+        <Typography>What would you like your clothes to be picked up?</Typography>
+
+        <div className="grid grid-cols-5 gap-3">
+          {[...Array(5)].map((_, i) => {
+            const newDate = new Date();
+            newDate.setDate(today.getDate() + i);
+            return (
+              <div
+                key={i}
+                className="bg-gray-50 p-3 rounded-md shadow-sm mx-auto text-center mt-5 border-2 border-cyan-800"
+              >
+                <Typography className="text-cyan-800 font-semibold">
+                  {days[newDate.getDay()]} <br /> {newDate.getDate()}
+                </Typography>
+              </div>
+            );
+          })}
+        </div>
       </div>
     </div>
   );
