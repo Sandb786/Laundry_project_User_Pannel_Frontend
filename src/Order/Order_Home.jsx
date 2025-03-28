@@ -1,8 +1,10 @@
 import { Button, Typography } from '@material-tailwind/react'
 import { ArrowLeft, PlusCircle, Trash, Minus, Plus } from 'lucide-react'
-import { use, useState } from "react";
 
 import React from 'react'
+import ClothForm from './ClothForm'
+import ScheduleForm from './ScheduleForm'
+import Billing_Card from './Billing_Card'
 
 
 
@@ -29,171 +31,25 @@ export default function Order_Home() {
           </Typography>
         </div>
         <div className='grid md:grid-cols-2 gap-6'>
-          {ClothForm()}
-          {ScheduleForm()}
 
-          <div className='w-full bg-gray-100 p-10 shadow-lg rounded-2xl mb-20'>
-            <h2 className='text-2xl font-semibold text-gray-700 text-center mb-4'>Payment</h2>
-            <div className='flex flex-col bg-white p-3 rounded-md shadow-sm'>
-              <label className='text-gray-600 font-medium'>Payment Method:</label>
-              <select className='p-3 border-b-2 text-lg'>
-                <option value=''>Select Payment Method</option>
-                <option value=''>Cash On Delivery</option>
-                <option value=''>Online Payment</option>
-              </select>
-            </div>
-          </div>
+        {/* Clouth Form Component */}
+          <ClothForm />
 
+        {/* Scedule order Form Component */}
+          <ScheduleForm/>
+          
+        {/*Billing Component */}
+          <Billing_Card/>
+
+          
         </div>
       </div>
     </div>
   )
 }
 
-function ClothForm() {
-  const [clothes, setClothes] = useState([{ type: "Shirt", quantity: 2 }, { type: "Pants", quantity: 3 }]);
-  const [clothType, setClothType] = useState("");
-  const [clothQuantity, setClothQuantity] = useState("");
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!clothType || !clothQuantity) return;
-    setClothes([...clothes, { type: clothType, quantity: parseInt(clothQuantity) }]);
-    setClothType("");
-    setClothQuantity("");
-  };
-
-  const handleRemove = (index) => {
-    setClothes(clothes.filter((_, i) => i !== index));
-  };
-
-  const handleIncrement = (index) => {
-    setClothes(clothes.map((item, i) => i === index ? { ...item, quantity: item.quantity + 1 } : item));
-  };
-
-  const handleDecrement = (index) => {
-    setClothes(clothes.map((item, i) => i === index && item.quantity > 1 ? { ...item, quantity: item.quantity - 1 } : item));
-  };
-
-  return (
-    <div className="w-full mx-auto mt-2 bg-gray-100 p-10 shadow-lg rounded-2xl md:mb-20">
-      <Typography className="text-2xl font-semibold text-gray-700 text-center mb-4">Add Clothes</Typography>
-      <form onSubmit={handleSubmit} className="space-y-4">
-        <div className="flex flex-col bg-white p-3 rounded-md shadow-sm">
-          <label className="text-gray-600 font-medium">Cloth Type:</label>
-          <select
-            value={clothType}
-            onChange={(e) => setClothType(e.target.value)}
-            className="p-3 border-b-2 focus:outline-none text-lg focus:border-b-3 focus:border-cyan-800"
-          >
-            <option value=""></option>
-            <option value="Shirt">Shirt</option>
-            <option value="Pants">Pants</option>
-            <option value="Jacket">Jacket</option>
-            <option value="Towel">Towel</option>
-          </select>
-        </div>
-
-        <div className="flex flex-col bg-white p-3 rounded-md shadow-sm">
-          <label className="text-gray-600 font-medium">Cloth Quantity:</label>
-          <input
-            type="number"
-            value={clothQuantity}
-            onChange={(e) => setClothQuantity(e.target.value)}
-            placeholder="Enter quantity"
-            className="p-3 border-b-2 focus:outline-none text-lg focus:border-b-3 focus:border-cyan-800"
-          />
-        </div>
-
-        <button type="submit" className="w-full flex items-center justify-center gap-2 bg-blue-600 text-white py-3 px-4 rounded-md hover:bg-blue-700 transition font-medium">
-          <PlusCircle size={20} /> Add Cloth
-        </button>
-      </form>
-
-      <div className="mt-6">
-        {clothes.length > 0 && (
-          <ul className="bg-gray-50 p-4 rounded-md shadow space-y-3 grid md:grid-cols-2 gap-2">
-            {clothes.map((item, index) => (
-              <li key={index} className="flex justify-between items-center p-3 bg-white rounded-md shadow-sm">
-                <span className="text-lg font-medium text-gray-800">
-                  {item.type} - {item.quantity}
-                </span>
-                <div className="flex gap-2 items-center">
-                  <button onClick={() => handleIncrement(index)} className="text-white bg-green-700 rounded">
-                    <Plus size={18} />
-                  </button>
-                  <button onClick={() => handleDecrement(index)} className="text-white bg-red-600 rounded">
-                    <Minus size={18} />
-                  </button>
-                  <button onClick={() => handleRemove(index)} className="text-orange-600 rounded-md p-1">
-                    <Trash size={20} />
-                  </button>
-                </div>
-              </li>
-            ))}
-          </ul>
-        )}
-      </div>
-    </div>
-  );
-}
 
 
-function ScheduleForm() {
-  const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-  const today = new Date();
 
-  const [selectedDate, setSelectedDate] = useState(null);
-  const [selectedTime, setSelectedTime] = useState(null);
 
-  const timeSlots = [
-    "07 - 09 AM", "10 - 11 AM", "12 - 02 PM",
-    "03 - 05 PM", "06 - 08 PM", "08 - 10 PM"
-  ];
-
-  return (
-    <div className="w-full bg-gray-100 p-6 mt-2 shadow-lg rounded-2xl">
-      <h2 className="text-2xl font-semibold text-gray-700 text-center mb-4">Schedule Order</h2>
-
-      <div className="bg-white p-5 rounded-md shadow-sm">
-        <Typography>When would you like your clothes to be picked up?</Typography>
-
-        <div className="grid grid-cols-3 gap-3">
-          {[...Array(4)].map((_, i) => {
-            const newDate = new Date();
-            newDate.setDate(today.getDate() + i);
-            const isSelected = selectedDate === i;
-
-            return (
-              <div
-                key={i}
-                onClick={() => setSelectedDate(i)}
-                className={`p-3 rounded-md shadow-sm text-center mt-5 border-2 cursor-pointer transition-all duration-300 
-                  ${isSelected ? "bg-cyan-800 text-white" : "bg-gray-50 text-cyan-800 border-cyan-800"}`}
-              >
-                <Typography className="font-semibold text-lg">
-                  {days[newDate.getDay()]} <br /> {newDate.getDate()}
-                </Typography>
-              </div>
-            );
-          })}
-        </div>
-
-        <Typography className="mt-5">Select a time slot</Typography>
-        <div className="grid grid-cols-3 mt-5 gap-2">
-          {timeSlots.map((slot, index) => (
-            <div
-              key={index}
-              onClick={() => setSelectedTime(index)}
-              className={`w-fit p-2 rounded-md mt-5 cursor-pointer transition-all duration-300 border 
-                ${selectedTime === index ? "bg-cyan-800 text-white" : "text-cyan-800 border-cyan-800"}`}
-            >
-              {slot}
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-}
 
