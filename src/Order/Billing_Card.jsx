@@ -4,7 +4,7 @@ import React from 'react';
 export default function Billing_Card() {
   const orderDetails = {
     orderId: "#12345",
-    customerName: "John Doe",
+    customerName: "Aman Raj",
     pickupDate: "March 28, 2025",
     deliveryDate: "April 1, 2025",
     items: [
@@ -42,13 +42,13 @@ export default function Billing_Card() {
         {orderDetails.items.map((item, index) => (
           <div key={index} className='flex justify-between border-b py-2 px-3'>
             <Typography>{item.name}</Typography>
-            <Typography>{item.quantity} x ${item.price}</Typography>
+            <Typography>{item.quantity} x ₹{item.price}</Typography>
           </div>
         ))}
 
         <div className='flex justify-between border-t font-semibold py-2 px-3 mt-4'>
           <Typography>Total</Typography>
-          <Typography>${orderDetails.total}</Typography>
+          <Typography>₹{orderDetails.total}</Typography>
         </div>
 
         <div className='text-center text-green-600 font-semibold mt-3'>
