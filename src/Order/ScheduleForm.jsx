@@ -6,8 +6,8 @@ export default function ScheduleForm()
 {
     const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
    
-    const [selectedDate, setSelectedDate] = useState(null);
-    const [selectedTime, setSelectedTime] = useState(null);
+    const [selectedDate, setSelectedDate] = useState(0);
+    const [selectedTime, setSelectedTime] = useState(5);
   
    
     const timeSlots = [

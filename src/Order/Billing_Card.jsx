@@ -1,8 +1,11 @@
 import { Typography } from '@material-tailwind/react';
 import React from 'react';
 
-export default function Billing_Card() {
-  const orderDetails = {
+export default function Billing_Card(props) 
+{
+
+  const orderDetails = 
+  {
     orderId: "#12345",
     customerName: "Aman Raj",
     pickupDate: "March 28, 2025",

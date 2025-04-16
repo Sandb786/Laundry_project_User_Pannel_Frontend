@@ -8,7 +8,8 @@ import Billing_Card from './Billing_Card'
 
 
 
-export default function Order_Home() {
+export default function Order_Home() 
+{
   return (
     <div className='bg-white'>
       <header className='bg-gray-50 sticky z-10 top-0 p-2 py-3 flex gap-5 shadow-sm'>
@@ -19,6 +20,7 @@ export default function Order_Home() {
       </header>
 
       <div className='p-5 grid gap-10'>
+        
         <div className='bg-gray-50 mt-2 p-3 shadow-md border border-gray-300 rounded-2xl flex gap-4'>
           <div className='px-2 p-2 bg-gray-200 w-15 rounded-2xl'>
             <img src="/Color_Laundry/Normal_press.png" alt="" className='w-12' />
@@ -30,6 +32,8 @@ export default function Order_Home() {
             </Typography>
           </Typography>
         </div>
+
+
         <div className='grid md:grid-cols-2 gap-6'>
 
         {/* Clouth Form Component */}

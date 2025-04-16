@@ -14,6 +14,8 @@ export default function ClothForm()
       setClothes([...clothes, { type: clothType, quantity: parseInt(clothQuantity) }]);
       setClothType("");
       setClothQuantity("");
+
+      console.log("Clouth:  ",clothes);
     };
   
     const handleRemove = (index) => {
