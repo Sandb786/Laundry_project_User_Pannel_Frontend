@@ -5,6 +5,7 @@ import React from 'react'
 import ClothForm from './ClothForm'
 import ScheduleForm from './ScheduleForm'
 import Billing_Card from './Billing_Card'
+import Submit from './Submit'
 
 
 
@@ -45,6 +46,9 @@ export default function Order_Home()
         {/*Billing Component */}
           <Billing_Card/>
 
+
+        {/* SUbmit form */}
+          <Submit/>
           
         </div>
       </div>

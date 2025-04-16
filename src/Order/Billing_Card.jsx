@@ -20,7 +20,7 @@ export default function Billing_Card(props)
   };
 
   return (
-    <div className='w-full bg-gray-100 p-10 shadow-lg rounded-2xl mb-20'>
+    <div className='w-full bg-gray-100 p-10 shadow-lg rounded-2xl mb-2'>
       <h2 className='text-2xl font-semibold text-gray-700 text-center mb-4'>Payment</h2>
 
       <div className='flex flex-col bg-white p-5 rounded-md shadow-sm'>
