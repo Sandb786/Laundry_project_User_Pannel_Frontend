@@ -1,9 +1,12 @@
 import { Typography } from "@material-tailwind/react";
 import { motion } from "framer-motion";
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-export default function Services() {
+export default function Services() 
+{
   const [selected, setSelected] = useState(null);
+  const navigate = useNavigate(); // Assuming you're using react-router-dom for navigation
 
   const services = [
     { name: "Normal Press", image: "/Color_Laundry/Normal_press.png" },
@@ -14,8 +17,10 @@ export default function Services() {
     { name: "Laundry", image: "/Color_Laundry/Laundry.png" }
   ];
 
-  const handleClick = (index) => {
+  const handleClick = (index) => 
+  {
     setSelected(index === selected ? null : index);
+    setTimeout(() => navigate(`/order/${index}`), 300); // Redirect after success
   };
 
   return (

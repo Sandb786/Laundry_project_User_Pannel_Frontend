@@ -16,7 +16,7 @@ function App() {
         <Routes> {/* Routes for navigation */}
 
           <Route path="/" element={<> <Hadder /> <ImageCard /> <Services/></>} />
-          <Route path='/order' element={<Order_Home/>}/>
+          <Route path='/order/:serviceId' element={<Order_Home/>}/>
 
         </Routes>
         
