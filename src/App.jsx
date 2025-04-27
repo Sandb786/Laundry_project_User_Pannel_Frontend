@@ -5,6 +5,7 @@ import ImageCard from './Home/ImageCard';
 import Services from './Home/Services/Services';
 import Hadder from './Navbar/Hadder';
 import Order_Home from './Order/Order_Home';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         
         <Navbar />
 
+        <ToastContainer/>
       </>
     </Router>
   );

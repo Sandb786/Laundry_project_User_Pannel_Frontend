@@ -13,7 +13,6 @@ import { useParams } from 'react-router-dom'
 export default function Order_Home() 
 {
   const {serviceId} = useParams()
-  
   const services = [
     { name: "Normal Press", image: "/Color_Laundry/Normal_press.png" },
     { name: "Steam Press", image: "/Color_Laundry/Steam_press.png" },
@@ -22,6 +21,11 @@ export default function Order_Home()
     { name: "Stain Remove", image: "/Color_Laundry/Stain_Remove.png" },
     { name: "Laundry", image: "/Color_Laundry/Laundry.png" }
   ];
+    const [order, setOrder] = React.useState({serviceName: services[serviceId].name});
+
+  console.log("Order: ", order);
+
+  
 
   return (
     <div className='bg-white'>
@@ -53,17 +57,18 @@ export default function Order_Home()
         <div className='grid md:grid-cols-2 gap-6'>
 
         {/* Clouth Form Component */}
-          <ClothForm />
+          <ClothForm order={order} setOrder={setOrder}/>
 
         {/* Scedule order Form Component */}
-          <ScheduleForm/>
+        <ScheduleForm order={order} setOrder={setOrder} />
+
           
         {/*Billing Component */}
-          <Billing_Card/>
+          <Billing_Card order={order}/>
 
 
         {/* SUbmit form */}
-          <Submit/>
+          <Submit />
           
         </div>
       </div>
