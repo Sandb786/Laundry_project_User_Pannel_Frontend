@@ -4,7 +4,7 @@ export default function Show_myOrders({ orders }) {
   console.log("Show my: ", orders);
 
   return (
-    <div className="overflow-y-auto space-y-4 pr-2 max-h-[550px] sm:max-h-[600px] md:max-h-[700px]">
+    <div className="overflow-y-auto space-y-4 pr-2 max-h-[700px]">
       {orders.map((order, index) => (
         <Card
           key={index}
