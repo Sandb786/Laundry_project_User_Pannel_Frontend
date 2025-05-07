@@ -6,12 +6,12 @@ export default function Show_myOrders({ orders }) {
       {orders.map((order, index) => (
         <Card
           key={index}
-          className="shadow-md hover:shadow-lg transition-shadow duration-300"
+          className="shadow-md hover:shadow-lg transition-shadow duration-300 mb-5 rounded-2xl"
         >
           <CardBody className="flex gap-4">
             {/* Image */}
             <img
-              src="/Color_Laundry/Steam_press.png"
+              src={order.image}
               alt="service"
               className="w-20 h-20 rounded-lg object-cover"
             />

@@ -14,6 +14,7 @@ export default function Show_page()
         time: "10 - 11 AM",
       },
       ordertype: "normal",
+      image: "/Color_Laundry/Normal_press.png",
       clothes: [
         { type: "Shirt", quantity: 3 },
         { type: "Pants", quantity: 2 },
@@ -26,6 +27,7 @@ export default function Show_page()
         time: "12 - 02 PM",
       },
       ordertype: "custom",
+      image: "/Color_Laundry/Steam_press.png",
       clothes: [
         { type: "T-Shirt", quantity: 5 },
         { type: "Jeans", quantity: 1 },
@@ -37,6 +39,7 @@ export default function Show_page()
         time: "06 - 08 PM",
       },
       ordertype: "normal",
+      image: "/Color_Laundry/Roll_press.png",
       clothes: [
         { type: "Kurta", quantity: 2 },
         { type: "Pajama", quantity: 2 },
@@ -49,6 +52,7 @@ export default function Show_page()
         time: "08 - 10 PM",
       },
       ordertype: "custom",
+      image: "/Color_Laundry/Dry_clean.png",
       clothes: [
         { type: "Blanket", quantity: 1 },
         { type: "Towel", quantity: 4 },
@@ -60,6 +64,7 @@ export default function Show_page()
         time: "10 - 12 AM",
       },
       ordertype: "normal",
+      image: "/Color_Laundry/Stain_Remove.png",
       clothes: [
         { type: "Saree", quantity: 1 },
         { type: "Shalwar", quantity: 2 },
@@ -72,6 +77,7 @@ export default function Show_page()
         time: "12 - 02 PM",
       },
       ordertype: "normal",
+      image: "/Color_Laundry/Laundry.png",
       clothes: [
         { type: "T-Shirt", quantity: 2 },
         { type: "Shorts", quantity: 3 },
@@ -83,6 +89,7 @@ export default function Show_page()
         time: "10 - 12 AM",
       },
       ordertype: "normal",
+      image: "/Color_Laundry/Normal_press.png",
       clothes: [
         { type: "Sweater", quantity: 1 },
         { type: "Scarf", quantity: 2 },
@@ -94,6 +101,7 @@ export default function Show_page()
         time: "02 - 04 PM",
       },
       ordertype: "custom",
+      image: "/Color_Laundry/Steam_press.png",
       clothes: [
         { type: "Curtain", quantity: 4 },
         { type: "Tablecloth", quantity: 2 },
@@ -101,12 +109,13 @@ export default function Show_page()
     },
   ];
   
+  
  // const order = tempOrder; // Replace with actual order data  
   return (
     <div>
 
     {/* Header */}
-      <header className='bg-gray-50 sticky z-10 top-0 p-2 py-3 flex gap-5 shadow-sm'>
+      <header className='bg-white sticky z-10 top-0 p-2 py-3 flex gap-5 shadow-sm'>
         <a href="/"> <Button className='text-black p-2'><ArrowLeft /></Button></a>
         <Typography variant='lead' className='text-2xl md:text-3xl'>
           My Orders
