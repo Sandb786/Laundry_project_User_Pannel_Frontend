@@ -28,7 +28,7 @@ export default function Order_Home()
   
 
   return (
-    <div className='bg-white'>
+    <div className='bg-gray-200'>
       
       {/* Header */}
       <header className='bg-gray-50 sticky z-10 top-0 p-2 py-3 flex gap-5 shadow-sm'>
@@ -64,11 +64,11 @@ export default function Order_Home()
 
           
         {/*Billing Component */}
-          <Billing_Card order={order}/>
+          <Billing_Card order={order} setOrder={setOrder}/>
 
 
         {/* SUbmit form */}
-          <Submit />
+          <Submit order={order} />
           
         </div>
       </div>

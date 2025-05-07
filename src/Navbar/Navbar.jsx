@@ -10,7 +10,7 @@ export default function Navbar()
 
   const navItems = [
     { label: "Home", icon: <Home size={24}/> , link:'/' },
-    { label: "Orders", icon: <ShoppingBag size={24} /> , link:'/order'},
+    { label: "Orders", icon: <ShoppingBag size={24} /> , link:'/myorders'},
     { label: "Services Price", icon: <ClipboardList size={24} /> , link:'/' },
     { label: "Profile", icon: <User size={24} /> , link:'#'},
   ];

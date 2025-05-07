@@ -1,0 +1,126 @@
+import React from 'react'
+import { ArrowLeft } from 'lucide-react'
+import { Button, Typography } from '@material-tailwind/react'
+import OrderSummary from './OrderSummary'
+import List_home from './Order_list/List_home';
+
+
+export default function Show_page() 
+{
+  const order = [
+    {
+      schedule: {
+        date: "2025-05-10",
+        time: "10 - 11 AM",
+      },
+      ordertype: "normal",
+      clothes: [
+        { type: "Shirt", quantity: 3 },
+        { type: "Pants", quantity: 2 },
+        { type: "Bedsheet", quantity: 1 },
+      ],
+    },
+    {
+      schedule: {
+        date: "2025-05-11",
+        time: "12 - 02 PM",
+      },
+      ordertype: "custom",
+      clothes: [
+        { type: "T-Shirt", quantity: 5 },
+        { type: "Jeans", quantity: 1 },
+      ],
+    },
+    {
+      schedule: {
+        date: "2025-05-12",
+        time: "06 - 08 PM",
+      },
+      ordertype: "normal",
+      clothes: [
+        { type: "Kurta", quantity: 2 },
+        { type: "Pajama", quantity: 2 },
+        { type: "Dupatta", quantity: 1 },
+      ],
+    },
+    {
+      schedule: {
+        date: "2025-05-13",
+        time: "08 - 10 PM",
+      },
+      ordertype: "custom",
+      clothes: [
+        { type: "Blanket", quantity: 1 },
+        { type: "Towel", quantity: 4 },
+      ],
+    },
+    {
+      schedule: {
+        date: "2025-05-14",
+        time: "10 - 12 AM",
+      },
+      ordertype: "normal",
+      clothes: [
+        { type: "Saree", quantity: 1 },
+        { type: "Shalwar", quantity: 2 },
+        { type: "Chadar", quantity: 1 },
+      ],
+    },
+    {
+      schedule: {
+        date: "2025-05-14",
+        time: "12 - 02 PM",
+      },
+      ordertype: "normal",
+      clothes: [
+        { type: "T-Shirt", quantity: 2 },
+        { type: "Shorts", quantity: 3 },
+      ],
+    },
+    {
+      schedule: {
+        date: "2025-05-15",
+        time: "10 - 12 AM",
+      },
+      ordertype: "normal",
+      clothes: [
+        { type: "Sweater", quantity: 1 },
+        { type: "Scarf", quantity: 2 },
+      ],
+    },
+    {
+      schedule: {
+        date: "2025-05-15",
+        time: "02 - 04 PM",
+      },
+      ordertype: "custom",
+      clothes: [
+        { type: "Curtain", quantity: 4 },
+        { type: "Tablecloth", quantity: 2 },
+      ],
+    },
+  ];
+  
+ // const order = tempOrder; // Replace with actual order data  
+  return (
+    <div>
+
+    {/* Header */}
+      <header className='bg-gray-50 sticky z-10 top-0 p-2 py-3 flex gap-5 shadow-sm'>
+        <a href="/"> <Button className='text-black p-2'><ArrowLeft /></Button></a>
+        <Typography variant='lead' className='text-2xl md:text-3xl'>
+          My Orders
+        </Typography>
+      </header>
+
+        {/* Orders Section */}
+        <section className=''>
+          {/* <OrderSummary order={order}/> */}
+          <List_home orders={order}/>
+        </section>
+
+
+
+    </div>
+  )
+}

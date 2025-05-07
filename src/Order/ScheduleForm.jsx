@@ -52,7 +52,8 @@ export default function ScheduleForm({ order, setOrder }) {
                 key={i}
                 onClick={() => setSelectedDate(i)}
                 className={`p-3 rounded-md shadow-sm text-center mt-5 border-2 cursor-pointer transition-all duration-300 
-                ${isSelected ? "bg-cyan-800 text-white" : "bg-gray-50 text-cyan-800 border-cyan-800"}`}
+                ${isSelected ? "bg-cyan-800 text-white" : "bg-gray-50 text-cyan-800 border-cyan-800"}
+              `}
               >
                 <Typography className="font-semibold text-lg">
                   {days[newDate.getDay()]} <br /> {newDate.getDate()}
@@ -76,21 +77,7 @@ export default function ScheduleForm({ order, setOrder }) {
           ))}
         </div>
 
-        <Typography className="mt-6">Order type</Typography>
-        <div className="grid grid-cols-2 gap-3 mt-5 justify-center">
-          <Button
-            onClick={() => setOrder(prev => ({ ...prev, type: "pickup" }))}
-            className={`md:w-52 ${order.type === "pickup" ? "bg-cyan-800 text-white" : "text-cyan-800 border-cyan-800 border-2"}`}
-          >
-            Pickup
-          </Button>
-          <Button
-            onClick={() => setOrder(prev => ({ ...prev, type: "drop" }))}
-            className={`md:w-52 ${order.type === "drop" ? "bg-cyan-800 text-white" : "text-cyan-800 border-cyan-800 border-2"}`}
-          >
-            Drop
-          </Button>
-        </div>
+        
 
 
       </div>
