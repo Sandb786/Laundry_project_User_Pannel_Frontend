@@ -2,7 +2,7 @@ import { Card, CardBody, Typography } from "@material-tailwind/react";
 
 export default function Show_myOrders({ orders }) {
   return (
-    <div className="overflow-y-auto space-y-4 pr-2 max-h-[70vh] sm:max-h-[600px]">
+    <div className="overflow-y-auto space-y-4 pr-2 max-h-[72vh] sm:max-h-[600px]">
       {orders.map((order, index) => (
         <Card
           key={index}
