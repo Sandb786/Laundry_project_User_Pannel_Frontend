@@ -13,7 +13,7 @@ export default function Show_order_history({orders})
           <CardBody className="flex gap-4">
             {/* Image */}
             <img
-              src="/Color_Laundry/Done.png"
+              src="/Color_Laundry/Wrong.png"
               alt="service"
               className="w-20 h-20 rounded-lg object-cover"
             />
@@ -31,9 +31,9 @@ export default function Show_order_history({orders})
                 </Typography>
                 <Typography
                   variant="small"
-                  className="border text-green-600 border-green-600 p-0.5 px-1 rounded-md font-semibold"
+                  className="border text-red-600 border-red-600 p-0.5 px-1 rounded-md font-semibold"
                 >
-                  Completed
+                  Cenceled
                 </Typography>
               </div>
 
