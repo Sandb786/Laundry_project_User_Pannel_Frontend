@@ -7,7 +7,9 @@ export default function ListHome({orders})
 {
   const [activeTab, setActiveTab] = useState('orders');
 
-  console.log("LIST OR: ",orders);
+  console.log("LIST OR: ",orders); 
+
+  // Put filtretion Of data that divide it into completed order..
 
   return (
     <div className="flex flex-col items-center w-full mt-0 bg-gray-200">
@@ -42,7 +44,7 @@ export default function ListHome({orders})
       {/* Content below based on active tab */}
       <div className="w-full max-w-4xl bg-gray-100 mt-3 p-5 rounded-t-3xl shadow-lg">
         {activeTab === 'orders' && <Show_myOrders orders={orders}/>}
-        {activeTab === 'history' && <Show_order_history />}
+        {activeTab === 'history' && <Show_order_history orders={orders}/>}
       </div>
     </div>
   );
