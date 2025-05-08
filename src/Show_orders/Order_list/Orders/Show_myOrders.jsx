@@ -19,11 +19,13 @@ export default function Show_myOrders({ orders }) {
             {/* Details */}
             <div className="flex-1">
               <div className="flex justify-between items-center mb-2">
+               
                 <Typography
                   variant="h6"
-                  className="bg-gradient-to-r from-cyan-500 to-blue-500 text-transparent bg-clip-text font-extrabold"
+                  className="capitalize font-bold"
                 >
-                  Order #{index + 1}
+                  {order.ordertype}
+                  
                 </Typography>
                 <Typography
                   variant="small"
@@ -35,8 +37,8 @@ export default function Show_myOrders({ orders }) {
 
               <div className="flex justify-between mb-3 text-sm text-gray-700">
                 <div>
-                  <Typography variant="h7" className="font-bold">
-                   {order.ordertype}
+                  <Typography variant="h7" className="font-semibold text-gray-500">
+                   {order.schedule.date}
                   </Typography>
                   <Typography variant="small" className={`font-semibold ${order.pickupDrop==='Urgent'?'text-orange-500':'text-green-600'}`}>{order.pickupDrop}</Typography>
                 </div>
