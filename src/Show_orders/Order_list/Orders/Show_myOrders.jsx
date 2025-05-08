@@ -1,7 +1,6 @@
 import { Card, CardBody, Typography } from "@material-tailwind/react";
 
-export default function Show_myOrders({ orders }) 
-{
+export default function Show_myOrders({ orders }) {
   return (
     <div className="overflow-y-auto space-y-4 pr-2 max-h-[72vh] sm:max-h-[600px]">
       {orders.map((order, index) => (
@@ -30,9 +29,9 @@ export default function Show_myOrders({ orders })
                 </Typography>
                 <Typography
                   variant="small"
-                  className="bg-green-600 text-white pb-0.5 px-0.5 rounded-md font-semibold "
+                  className="border text-green-600 border-green-600 p-0.5 rounded-md font-semibold"
                 >
-                  Completed
+                  {order.ordertype}
                 </Typography>
               </div>
 
