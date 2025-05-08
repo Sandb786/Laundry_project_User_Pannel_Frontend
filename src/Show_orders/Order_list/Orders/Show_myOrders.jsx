@@ -29,7 +29,7 @@ export default function Show_myOrders({ orders }) {
                 </Typography>
                 <Typography
                   variant="small"
-                  className="border text-green-600 border-green-600 p-0.5 rounded-md font-semibold"
+                  className="border text-green-600 border-green-600 p-0.5 px-1 rounded-md font-semibold"
                 >
                   {order.ordertype}
                 </Typography>
