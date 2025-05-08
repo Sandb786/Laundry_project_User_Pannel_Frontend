@@ -27,7 +27,7 @@ export default function Show_myOrders({ orders }) {
                 </Typography>
                 <Typography
                   variant="small"
-                  className="text-gray-600 capitalize"
+                  className="border text-green-600 border-green-600 p-0.5 rounded-md "
                 >
                   {order.ordertype}
                 </Typography>
@@ -35,16 +35,18 @@ export default function Show_myOrders({ orders }) {
 
               <div className="flex justify-between mb-3 text-sm text-gray-700">
                 <div>
-                  <Typography variant="small" className="font-medium">
-                    Date:
+                  <Typography variant="h7" className="font-bold">
+                   {order.ordertype}
                   </Typography>
-                  <Typography variant="small">{order.schedule.date}</Typography>
+                  <Typography variant="small" className={`font-semibold ${order.pickupDrop==='Urgent'?'text-orange-500':'text-green-600'}`}>{order.pickupDrop}</Typography>
                 </div>
                 <div>
-                  <Typography variant="small" className="font-medium">
+                  <Typography variant="small" className="font-medium ">
                     Time:
                   </Typography>
-                  <Typography variant="small">{order.schedule.time}</Typography>
+                  <Typography variant="small">
+                    <span className="font-light">{order.schedule.time}</span>
+                  </Typography>
                 </div>
               </div>
 
@@ -63,6 +65,7 @@ export default function Show_myOrders({ orders }) {
                   ))}
                 </ul>
               </div> */}
+              
             </div>
           </CardBody>
         </Card>

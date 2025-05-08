@@ -10,10 +10,11 @@ export default function Show_page()
   const order = [
     {
       schedule: {
-        date: "2025-05-10",
+        date: "10-05-2025",
         time: "10 - 11 AM",
       },
-      ordertype: "normal",
+      ordertype: "Normal Press",
+      pickupDrop: "Normal",
       image: "/Color_Laundry/Normal_press.png",
       clothes: [
         { type: "Shirt", quantity: 3 },
@@ -23,10 +24,11 @@ export default function Show_page()
     },
     {
       schedule: {
-        date: "2025-05-11",
+        date: "11-05-2025",
         time: "12 - 02 PM",
       },
-      ordertype: "custom",
+      ordertype: "Steam Press",
+      pickupDrop: "Urgent",
       image: "/Color_Laundry/Steam_press.png",
       clothes: [
         { type: "T-Shirt", quantity: 5 },
@@ -35,10 +37,11 @@ export default function Show_page()
     },
     {
       schedule: {
-        date: "2025-05-12",
+        date: "12-05-2025",
         time: "06 - 08 PM",
       },
-      ordertype: "normal",
+      ordertype: "Roll Press",
+      pickupDrop: "Normal",
       image: "/Color_Laundry/Roll_press.png",
       clothes: [
         { type: "Kurta", quantity: 2 },
@@ -48,10 +51,11 @@ export default function Show_page()
     },
     {
       schedule: {
-        date: "2025-05-13",
+        date: "13-05-2025",
         time: "08 - 10 PM",
       },
-      ordertype: "custom",
+      ordertype: "Dry Cleaning",
+      pickupDrop: "Urgent",
       image: "/Color_Laundry/Dry_clean.png",
       clothes: [
         { type: "Blanket", quantity: 1 },
@@ -60,11 +64,12 @@ export default function Show_page()
     },
     {
       schedule: {
-        date: "2025-05-14",
+        date: "14-05-2025",
         time: "10 - 12 AM",
       },
-      ordertype: "normal",
-      image: "/Color_Laundry/Stain_Remove.png",
+      ordertype: "Laundry",
+      pickupDrop: "Normal",
+      image: "/Color_Laundry/Laundry.png",
       clothes: [
         { type: "Saree", quantity: 1 },
         { type: "Shalwar", quantity: 2 },
@@ -73,11 +78,12 @@ export default function Show_page()
     },
     {
       schedule: {
-        date: "2025-05-14",
+        date: "14-05-2025",
         time: "12 - 02 PM",
       },
-      ordertype: "normal",
-      image: "/Color_Laundry/Laundry.png",
+      ordertype: "Normal Press",
+      pickupDrop: "Urgent",
+      image: "/Color_Laundry/Normal_press.png",
       clothes: [
         { type: "T-Shirt", quantity: 2 },
         { type: "Shorts", quantity: 3 },
@@ -85,11 +91,12 @@ export default function Show_page()
     },
     {
       schedule: {
-        date: "2025-05-15",
+        date: "15-05-2025",
         time: "10 - 12 AM",
       },
-      ordertype: "normal",
-      image: "/Color_Laundry/Normal_press.png",
+      ordertype: "Steam Press",
+      pickupDrop: "Normal",
+      image: "/Color_Laundry/Steam_press.png",
       clothes: [
         { type: "Sweater", quantity: 1 },
         { type: "Scarf", quantity: 2 },
@@ -97,17 +104,22 @@ export default function Show_page()
     },
     {
       schedule: {
-        date: "2025-05-15",
+        date: "15-05-2025",
         time: "02 - 04 PM",
       },
-      ordertype: "custom",
-      image: "/Color_Laundry/Steam_press.png",
+      ordertype: "Dry Cleaning",
+      pickupDrop: "Urgent",
+      image: "/Color_Laundry/Dry_clean.png",
       clothes: [
         { type: "Curtain", quantity: 4 },
         { type: "Tablecloth", quantity: 2 },
       ],
     },
   ];
+  
+  
+  
+  
   
   
  // const order = tempOrder; // Replace with actual order data  
