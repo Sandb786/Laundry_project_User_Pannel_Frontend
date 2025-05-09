@@ -3,17 +3,29 @@ import React, { useState } from 'react';
 import Show_myOrders from './Orders/Show_myOrders';
 import Show_order_history from './History/Show_order_history';
 
-export default function ListHome({orders}) 
-{
+export default function ListHome({ orders }) {
   const [activeTab, setActiveTab] = useState('orders');
 
-  console.log("LIST OR: ",orders); 
+  console.log("LIST OR: ", orders);
 
-  // Put filtretion Of data that divide it into completed order..
+  // ✅ FILTERING FUNCTION
+
+  const activeOrders = orders.filter(
+    (order) => order.status !== 'Delivered' && order.status !== 'Cancelled'
+  );
+  const historyOrders = orders.filter(
+    (order) => order.status === 'Delivered' || order.status === 'Cancelled'
+  );
+  // Filter active orders and history orders based on their status
+  // Assuming orders is an array of order objects with a status property
+  // Example: const orders = [{ status: 'Delivered' }, { status: 'Pending' }, ...]
+  // const orders = [
+  //   { status: 'Delivered' },
+  //   { status: 'Pending' },
+  //   { status: 'Cancel' }
 
   return (
     <div className="flex flex-col items-center w-full mt-0 bg-gray-200">
-      
       {/* Tabs */}
       <div className="flex flex-wrap justify-center gap-x-40 md:gap-x-250 mt-3  rounded-t-lg">
         <Typography
@@ -43,8 +55,8 @@ export default function ListHome({orders})
 
       {/* Content below based on active tab */}
       <div className="w-full max-w-4xl bg-gray-100 mt-3 p-5 rounded-t-3xl shadow-lg">
-        {activeTab === 'orders' && <Show_myOrders orders={orders}/>}
-        {activeTab === 'history' && <Show_order_history orders={orders}/>}
+        {activeTab === 'orders' && <Show_myOrders orders={activeOrders} />}
+        {activeTab === 'history' && <Show_order_history orders={historyOrders} />}
       </div>
     </div>
   );

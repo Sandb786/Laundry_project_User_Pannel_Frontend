@@ -1,8 +1,13 @@
 import React from 'react'
 import { Card, CardBody, Typography } from "@material-tailwind/react";
 
-export default function Show_order_history({orders}) 
+export default function Show_order_history({ orders }) 
 {
+  // // Filter orders that are Delivered or Cancel (optional if already filtered outside)
+  // const historyOrders = orders.filter(
+  //   (order) => order.status === 'Delivered' || order.status === 'Cancel'
+  // );
+
   return (
     <div className="overflow-y-auto space-y-4 pr-2 max-h-[72vh] sm:max-h-[600px]">
       {orders.map((order, index) => (
@@ -11,9 +16,9 @@ export default function Show_order_history({orders})
           className="shadow-md hover:shadow-lg transition-shadow duration-300 mb-5 rounded-2xl"
         >
           <CardBody className="flex gap-4">
-            {/* Image */}
+            {/* ✅ Conditional image based on status */}
             <img
-              src="/Color_Laundry/Wrong.png"
+              src={order.status === 'Delivered' ? "/Color_Laundry/Done.png" : "/Color_Laundry/Wrong.png"}
               alt="service"
               className="w-20 h-20 rounded-lg object-cover"
             />
@@ -21,28 +26,36 @@ export default function Show_order_history({orders})
             {/* Details */}
             <div className="flex-1">
               <div className="flex justify-between items-center mb-2">
-               
-                <Typography
-                  variant="h6"
-                  className="capitalize font-bold"
-                >
+                <Typography variant="h6" className="capitalize font-bold">
                   {order.ordertype}
-                  
                 </Typography>
                 <Typography
                   variant="small"
-                  className="border text-red-600 border-red-600 p-0.5 px-1 rounded-md font-semibold"
+                  className={`border p-0.5 px-1 rounded-md font-semibold ${
+                    order.status === 'Cancel'
+                      ? 'text-red-600 border-red-600'
+                      : 'text-green-600 border-green-600'
+                  }`}
                 >
-                  Cenceled
+                  {order.status}
                 </Typography>
               </div>
 
               <div className="flex justify-between mb-3 text-sm text-gray-700">
                 <div>
                   <Typography variant="h7" className="font-semibold text-gray-500">
-                   {order.schedule.date}
+                    {order.schedule.date}
                   </Typography>
-                  <Typography variant="small" className={`font-semibold ${order.pickupDrop==='Urgent'?'text-orange-500':'text-green-600'}`}>{order.pickupDrop}</Typography>
+                  <Typography
+                    variant="small"
+                    className={`font-semibold ${
+                      order.pickupDrop === 'Urgent'
+                        ? 'text-orange-500'
+                        : 'text-green-600'
+                    }`}
+                  >
+                    {order.pickupDrop}
+                  </Typography>
                 </div>
                 <div>
                   <Typography variant="small" className="font-medium ">
@@ -53,23 +66,6 @@ export default function Show_order_history({orders})
                   </Typography>
                 </div>
               </div>
-
-              {/* <div>
-                <Typography
-                  variant="small"
-                  className="font-semibold text-gray-800 mb-1"
-                >
-                  Clothes:
-                </Typography>
-                <ul className="list-disc pl-5 text-sm text-gray-700 space-y-1">
-                  {order.clothes.map((cloth, i) => (
-                    <li key={i}>
-                      {cloth.type} - {cloth.quantity} pcs
-                    </li>
-                  ))}
-                </ul>
-              </div> */}
-              
             </div>
           </CardBody>
         </Card>
