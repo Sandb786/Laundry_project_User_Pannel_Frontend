@@ -20,7 +20,7 @@ export default function Show_order_history({ orders })
             <img
               src={order.status === 'Delivered' ? "/Color_Laundry/Done.png" : "/Color_Laundry/Wrong.png"}
               alt="service"
-              className="w-20 h-20 rounded-lg object-cover"
+              className="w-17 h-17 mt-2 rounded-lg object-cover"
             />
 
             {/* Details */}
