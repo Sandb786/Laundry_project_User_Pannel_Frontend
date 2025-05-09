@@ -32,7 +32,7 @@ export default function Show_order_history({ orders })
                 <Typography
                   variant="small"
                   className={`border p-0.5 px-1 rounded-md font-semibold ${
-                    order.status === 'Cancel'
+                    order.status === 'Cancelled'
                       ? 'text-red-600 border-red-600'
                       : 'text-green-600 border-green-600'
                   }`}
