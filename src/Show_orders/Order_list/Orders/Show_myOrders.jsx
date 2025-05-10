@@ -8,12 +8,13 @@ export default function Show_myOrders({ orders }) {
         <motion.div
           key={index}
           initial={{ opacity: 0, y: 30 }}
+          transition={{ duration: 0.2 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: index * 0.1 }}
-          // whileHover={{ scale: 1.02 }}
-          whileTap={{ scale: 0.95, rotate: 1 }}
+          whileTap={{ scale: 0.95, rotate: 0.1, }}
         >
-          <Card className="shadow-md hover:shadow-lg transition-shadow duration-300 mb-5 rounded-2xl cursor-pointer">
+
+
+          <Card className="shadow-md hover:shadow-lg transition-shadow duration-300 mb-5 rounded-2xl cursor-pointer ">
             <CardBody className="flex gap-4">
               {/* Image */}
               <img
@@ -46,11 +47,10 @@ export default function Show_myOrders({ orders }) {
                     </Typography>
                     <Typography
                       variant="small"
-                      className={`font-semibold ${
-                        order.pickupDrop === "Urgent"
+                      className={`font-semibold ${order.pickupDrop === "Urgent"
                           ? "text-orange-500"
                           : "text-green-600"
-                      }`}
+                        }`}
                     >
                       {order.pickupDrop}
                     </Typography>
