@@ -7,7 +7,7 @@ import List_home from './Order_list/List_home';
 
 export default function Show_page() 
 {
-  const order = getOrders();
+  const order = getOrders(10);
   
   
 
@@ -35,238 +35,56 @@ export default function Show_page()
   )
 }
 
-function getOrders() 
+function getOrders(count) 
 {
-  const order = [
-    {
-      schedule: {
-        date: "10-05-2025",
-        time: "10 - 11 AM",
-      },
-      ordertype: "Normal Press",
-      pickupDrop: "Normal",
-      status: "Delivered",
-      image: "/Color_Laundry/Normal_press.png",
-      clothes: [
-        { type: "Shirt", quantity: 3 },
-        { type: "Pants", quantity: 2 },
-        { type: "Bedsheet", quantity: 1 },
-      ],
-    },
-    {
-      schedule: {
-        date: "11-05-2025",
-        time: "12 - 02 PM",
-      },
-      ordertype: "Steam Press",
-      pickupDrop: "Urgent",
-      status: "Pending",
-      image: "/Color_Laundry/Steam_press.png",
-      clothes: [
-        { type: "T-Shirt", quantity: 5 },
-        { type: "Jeans", quantity: 1 },
-      ],
-    },
-    {
-      schedule: {
-        date: "12-05-2025",
-        time: "06 - 08 PM",
-      },
-      ordertype: "Roll Press",
-      pickupDrop: "Normal",
-      status: "Cancelled",
-      image: "/Color_Laundry/Roll_press.png",
-      clothes: [
-        { type: "Kurta", quantity: 2 },
-        { type: "Pajama", quantity: 2 },
-        { type: "Dupatta", quantity: 1 },
-      ],
-    },
-    {
-      schedule: {
-        date: "13-05-2025",
-        time: "08 - 10 PM",
-      },
-      ordertype: "Dry Cleaning",
-      pickupDrop: "Urgent",
-      status: "Delivered",
-      image: "/Color_Laundry/Dry_clean.png",
-      clothes: [
-        { type: "Blanket", quantity: 1 },
-        { type: "Towel", quantity: 4 },
-      ],
-    },
-    {
-      schedule: {
-        date: "14-05-2025",
-        time: "10 - 12 AM",
-      },
-      ordertype: "Laundry",
-      pickupDrop: "Normal",
-      status: "Pending",
-      image: "/Color_Laundry/Laundry.png",
-      clothes: [
-        { type: "Saree", quantity: 1 },
-        { type: "Shalwar", quantity: 2 },
-        { type: "Chadar", quantity: 1 },
-      ],
-    },
-    {
-      schedule: {
-        date: "14-05-2025",
-        time: "12 - 02 PM",
-      },
-      ordertype: "Normal Press",
-      pickupDrop: "Urgent",
-      status: "Cancelled",
-      image: "/Color_Laundry/Normal_press.png",
-      clothes: [
-        { type: "T-Shirt", quantity: 2 },
-        { type: "Shorts", quantity: 3 },
-      ],
-    },
-    {
-      schedule: {
-        date: "15-05-2025",
-        time: "10 - 12 AM",
-      },
-      ordertype: "Steam Press",
-      pickupDrop: "Normal",
-      status: "Delivered",
-      image: "/Color_Laundry/Steam_press.png",
-      clothes: [
-        { type: "Sweater", quantity: 1 },
-        { type: "Scarf", quantity: 2 },
-      ],
-    },
-    {
-      schedule: {
-        date: "15-05-2025",
-        time: "02 - 04 PM",
-      },
-      ordertype: "Dry Cleaning",
-      pickupDrop: "Urgent",
-      status: "Pending",
-      image: "/Color_Laundry/Dry_clean.png",
-      clothes: [
-        { type: "Curtain", quantity: 4 },
-        { type: "Tablecloth", quantity: 2 },
-      ],
-    },
-    // New Orders Added
-    {
-      schedule: {
-        date: "16-05-2025",
-        time: "08 - 10 AM",
-      },
-      ordertype: "Roll Press",
-      pickupDrop: "Normal",
-      status: "Delivered",
-      image: "/Color_Laundry/Roll_press.png",
-      clothes: [
-        { type: "Shirt", quantity: 4 },
-        { type: "Jeans", quantity: 3 },
-      ],
-    },
-    {
-      schedule: {
-        date: "17-05-2025",
-        time: "10 - 12 PM",
-      },
-      ordertype: "Laundry",
-      pickupDrop: "Urgent",
-      status: "Cancelled",
-      image: "/Color_Laundry/Laundry.png",
-      clothes: [
-        { type: "Pants", quantity: 5 },
-        { type: "T-Shirt", quantity: 3 },
-      ],
-    },
-    {
-      schedule: {
-        date: "18-05-2025",
-        time: "12 - 02 PM",
-      },
-      ordertype: "Steam Press",
-      pickupDrop: "Normal",
-      status: "Pending",
-      image: "/Color_Laundry/Steam_press.png",
-      clothes: [
-        { type: "Shirt", quantity: 2 },
-        { type: "Saree", quantity: 1 },
-      ],
-    },
-    {
-      schedule: {
-        date: "19-05-2025",
-        time: "02 - 04 PM",
-      },
-      ordertype: "Dry Cleaning",
-      pickupDrop: "Urgent",
-      status: "Delivered",
-      image: "/Color_Laundry/Dry_clean.png",
-      clothes: [
-        { type: "Bedsheet", quantity: 2 },
-        { type: "Towel", quantity: 1 },
-      ],
-    },
-    // Equal distribution of all three statuses
-    {
-      schedule: {
-        date: "20-05-2025",
-        time: "06 - 08 PM",
-      },
-      ordertype: "Laundry",
-      pickupDrop: "Normal",
-      status: "Pending",
-      image: "/Color_Laundry/Laundry.png",
-      clothes: [
-        { type: "Shirt", quantity: 1 },
-        { type: "Pants", quantity: 2 },
-      ],
-    },
-    {
-      schedule: {
-        date: "21-05-2025",
-        time: "08 - 10 AM",
-      },
-      ordertype: "Dry Cleaning",
-      pickupDrop: "Urgent",
-      status: "Cancelled",
-      image: "/Color_Laundry/Dry_clean.png",
-      clothes: [
-        { type: "Towel", quantity: 1 },
-        { type: "Curtain", quantity: 2 },
-      ],
-    },
-    {
-      schedule: {
-        date: "22-05-2025",
-        time: "10 - 12 PM",
-      },
-      ordertype: "Steam Press",
-      pickupDrop: "Normal",
-      status: "Delivered",
-      image: "/Color_Laundry/Steam_press.png",
-      clothes: [
-        { type: "T-Shirt", quantity: 2 },
-        { type: "Scarf", quantity: 1 },
-      ],
-    },
-    {
-      schedule: {
-        date: "23-05-2025",
-        time: "12 - 02 PM",
-      },
-      ordertype: "Roll Press",
-      pickupDrop: "Urgent",
-      status: "Pending",
-      image: "/Color_Laundry/Roll_press.png",
-      clothes: [
-        { type: "Shirt", quantity: 3 },
-        { type: "Towel", quantity: 2 },
-      ],
-    },
+  const orderTypes = ["Normal Press", "Steam Press", "Roll Press", "Dry Cleaning", "Laundry"];
+  const pickupTypes = ["Normal", "Urgent"];
+  const statuses = ["Pending", "Rady for PickedUp", "In Process", "Delivered", "Cancelled"];
+  const images = {
+    "Normal Press": "/Color_Laundry/Normal_press.png",
+    "Steam Press": "/Color_Laundry/Steam_press.png",
+    "Roll Press": "/Color_Laundry/Roll_press.png",
+    "Dry Cleaning": "/Color_Laundry/Dry_clean.png",
+    "Laundry": "/Color_Laundry/Laundry.png"
+  };
+
+  const clothItems = [
+    "Shirt", "Pants", "Kurta", "Pajama", "Dupatta", "T-Shirt", 
+    "Jeans", "Sweater", "Scarf", "Blanket", "Towel", "Saree", 
+    "Shalwar", "Chadar", "Shorts", "Curtain", "Tablecloth", "Jacket", "Cap"
   ];
-  return order;  
+
+  const orders = [];
+
+  for (let i = 0; i < count; i++) {
+    const ordertype = orderTypes[Math.floor(Math.random() * orderTypes.length)];
+    const pickupDrop = pickupTypes[Math.floor(Math.random() * pickupTypes.length)];
+    const status = statuses[Math.floor(Math.random() * statuses.length)];
+    const image = images[ordertype];
+    
+    // generate random clothes
+    const clothes = Array.from({ length: Math.floor(Math.random() * 3) + 1 }, () => ({
+      type: clothItems[Math.floor(Math.random() * clothItems.length)],
+      quantity: Math.floor(Math.random() * 5) + 1
+    }));
+
+    const order = {
+      schedule: {
+        date: `${10 + i}-05-2025`,
+        time: `${10 + i} - ${11 + i} AM`
+      },
+      ordertype,
+      pickupDrop,
+      status,
+      image,
+      clothes
+    };
+
+    orders.push(order);
+  }
+
+  return orders;
 }
+
+
+
