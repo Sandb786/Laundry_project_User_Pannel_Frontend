@@ -1,5 +1,6 @@
 import React from 'react'
 import { Card, CardBody, Typography } from "@material-tailwind/react";
+import { motion } from "framer-motion";
 
 export default function Show_order_history({ orders }) 
 {
@@ -11,6 +12,13 @@ export default function Show_order_history({ orders })
   return (
     <div className="overflow-y-auto space-y-4 pr-2 max-h-[72vh] sm:max-h-[600px]">
       {orders.map((order, index) => (
+         <motion.div
+         key={index}
+         initial={{ opacity: 0, y: 30 }}
+         // transition={{ duration: 0.2 }}
+         animate={{ opacity: 1, y: 0 }}
+         whileTap={{ scale: 0.65, rotate: 0.1, }}
+       >
         <Card
           key={index}
           className="shadow-md hover:shadow-lg transition-shadow duration-300 mb-5 rounded-2xl"
@@ -69,6 +77,7 @@ export default function Show_order_history({ orders })
             </div>
           </CardBody>
         </Card>
+        </motion.div>
       ))}
     </div>
   );
