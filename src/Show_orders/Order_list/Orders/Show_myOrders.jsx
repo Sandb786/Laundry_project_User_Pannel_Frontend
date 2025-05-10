@@ -8,9 +8,9 @@ export default function Show_myOrders({ orders }) {
         <motion.div
           key={index}
           initial={{ opacity: 0, y: 30 }}
-          transition={{ duration: 0.2 }}
+          // transition={{ duration: 0.2 }}
           animate={{ opacity: 1, y: 0 }}
-          whileTap={{ scale: 0.95, rotate: 0.1, }}
+          whileTap={{ scale: 0.85, rotate: 0.1, }}
         >
 
 
