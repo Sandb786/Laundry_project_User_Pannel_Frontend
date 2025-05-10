@@ -33,7 +33,7 @@ export default function Show_myOrders({ orders }) {
                     variant="small"
                     className={`border p-0.5 px-1 rounded-md font-semibold ${
                       order.status === 'Pending'
-                        ? 'text-orange-600 border-orange-600' // Pending: Yellow
+                        ? 'text-yellow-600 border-yellow-600' // Pending: Yellow
                         :  order.status === 'Rady for PickedUp'
                             ? 'text-blue-700 border-blue-700' // Picked Up: Blue
                             : order.status === 'In Process'
