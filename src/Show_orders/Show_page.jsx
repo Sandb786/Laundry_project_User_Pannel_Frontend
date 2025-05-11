@@ -26,7 +26,7 @@ export default function Show_page()
 
         {/* Orders Section */}
         <section className=''>
-          <List_home orders={order}/>
+          {/* <List_home orders={order}/> */}
           <OrderDetail_Home order={order[2]} />
         </section>
 
@@ -41,6 +41,7 @@ function getOrders(count)
   const orderTypes = ["Normal Press", "Steam Press", "Roll Press", "Dry Cleaning", "Laundry"];
   const pickupTypes = ["Normal", "Urgent"];
   const statuses = ["Pending", "Rady for PickedUp", "In Process", "Delivered", "Cancelled"];
+  const total=100;
   const images = {
     "Normal Press": "/Color_Laundry/Normal_press.png",
     "Steam Press": "/Color_Laundry/Steam_press.png",
@@ -74,6 +75,7 @@ function getOrders(count)
         date: `${10 + i}-05-2025`,
         time: `${10 + i} - ${11 + i} AM`
       },
+      total: total + i,
       ordertype,
       pickupDrop,
       status,
