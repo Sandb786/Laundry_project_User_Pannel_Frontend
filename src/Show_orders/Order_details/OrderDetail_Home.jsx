@@ -6,10 +6,7 @@ export default function OrderDetail_Home({order})
 {
   return (
     <div>
-        <div className='p-4 -mt-2'>
-             {/* <Hadder order={order}/> */}
-        </div>
-        <div className='p-0'>
+        <div className=''>
              <ShowDetail order={order}/>
         </div>
     </div>

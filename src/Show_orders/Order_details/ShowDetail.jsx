@@ -3,23 +3,25 @@ import { Typography } from "@material-tailwind/react";
 
 export default function OrderDetail({ order }) {
     return (
-        <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white py-10 px-4 sm:px-8">
-            <div className="max-w-4xl mx-auto bg-white shadow-2xl rounded-3xl overflow-hidden">
+
+        <div className=" bg-gray-100 py-10 px-1 sm:px-8 ">
 
                 {/* Header Image */}
-                <div className="relative h-32 sm:h-48 w-full overflow-hidden rounded-xl shadow-md">
+                <div className="relative h-32 sm:h-48 w-full overflow-visible -mt-10 ">
                     <img
                         src={order.image}
                         alt="Service"
-                        className="w-full h-full object-contain bg-white p-2"
+                        className="w-full h-full object-contain  p-2 "
                     />
-                    <div className="absolute inset-0 bg-white/5 flex items-end p-4 ">
-                        <Typography variant="lead" className="text-black font-bold capitalize mt-10">
+                    <div className="absolute inset-0 bg-gray-100/5 flex items-end p-4">
+                        <Typography variant="lead" className="text-black font-bold capitalize">
                             {order.ordertype}
                         </Typography>
+                        
                     </div>
                 </div>
 
+            <div className="max-w-4xl mx-auto bg-white shadow-2xl rounded-t-3xl overflow-hidden mt-1">
 
                 {/* Order Details */}
                 <div className="p-6 sm:p-10 space-y-6">
@@ -68,17 +70,36 @@ export default function OrderDetail({ order }) {
                             ))}
                         </ul>
                     </div>
+                    {/* Clothes List */}
+                    <div>
+                        <Typography variant="h6" className="font-semibold mb-2">Clothes Included</Typography>
+                        <ul className="list-disc pl-6 space-y-1 text-sm text-gray-800">
+                            {order.clothes.map((cloth, idx) => (
+                                <li key={idx}>{cloth.type} — <span className="font-medium">{cloth.quantity} pcs</span></li>
+                            ))}
+                        </ul>
+                    </div>
+                    {/* Clothes List */}
+                    <div>
+                        <Typography variant="h6" className="font-semibold mb-2">Clothes Included</Typography>
+                        <ul className="list-disc pl-6 space-y-1 text-sm text-gray-800">
+                            {order.clothes.map((cloth, idx) => (
+                                <li key={idx}>{cloth.type} — <span className="font-medium">{cloth.quantity} pcs</span></li>
+                            ))}
+                        </ul>
+                    </div>
 
                     {/* Action Buttons */}
                     <div className="pt-4 flex flex-wrap gap-3 justify-end">
                         <button className="bg-blue-600 text-white px-5 py-2 rounded-lg text-sm shadow-md hover:bg-blue-700 transition">
                             Contact Support
                         </button>
-                        <button className="bg-gray-200 text-gray-800 px-5 py-2 rounded-lg text-sm shadow-md hover:bg-gray-300 transition">
-                            Back to Orders
+                        <button className="bg-gray-200 text-red-500 px-5 py-2 rounded-lg text-sm shadow-md font-bold ">
+                            Cancel Order
                         </button>
                     </div>
                 </div>
+
             </div>
         </div>
     );
