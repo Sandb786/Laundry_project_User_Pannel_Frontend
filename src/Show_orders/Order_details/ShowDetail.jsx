@@ -25,7 +25,7 @@ export default function OrderDetail({ order }) {
                 <div className="p-6 sm:p-10 space-y-10">
 
                     {/* ========== Order Status ========== */}
-                    <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b border-gray-400 pb-4">
+                    <div className="flex flex-row sm:flex-row justify-between items-start sm:items-center border-b border-gray-400 pb-4">
                         <Typography variant="h6" className="font-semibold text-gray-700">
                             Order Status
                         </Typography>
