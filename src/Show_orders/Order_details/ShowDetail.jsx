@@ -21,10 +21,11 @@ export default function OrderDetail({ order }) {
                     </div>
                 </div>
 
-            <div className="max-w-4xl mx-auto bg-white shadow-2xl rounded-t-3xl overflow-hidden mt-1">
+            <div className="overflow-y-auto  pr-0 max-h-[70vh] sm:max-h-[600px] mx-auto bg-white rounded-t-3xl  mt-1 px-4 sm:px-6">
 
                 {/* Order Details */}
-                <div className="p-6 sm:p-10 space-y-6">
+                <div className="p-6 sm:p-10 space-y-10 mb-50">
+
                     {/* Status Badge */}
                     <div className="flex justify-end">
                         <Typography
@@ -88,6 +89,7 @@ export default function OrderDetail({ order }) {
                             ))}
                         </ul>
                     </div>
+                    
 
                     {/* Action Buttons */}
                     <div className="pt-4 flex flex-wrap gap-3 justify-end">
