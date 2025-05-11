@@ -123,14 +123,36 @@ export default function OrderDetail({ order }) {
                     </div>
 
                     {/* ========== Action Buttons ========== */}
-                    <div className="pt-4 flex flex-wrap gap-3 justify-center mb-5">
+                    {/* <div className="pt-4 flex flex-wrap gap-3 justify-center mb-5">
                         <button className="bg-blue-600 text-white px-5 py-2 rounded-lg text-sm shadow-md hover:bg-blue-700 transition">
                             Contact Support
                         </button>
                         <button className="bg-gray-200 text-red-500 px-5 py-2 rounded-lg text-sm shadow-md font-bold">
                             Cancel Order
                         </button>
-                    </div>
+                    </div> */}
+
+                    {/* ========== Cancel Reason ========== */}
+                    {order.status === 'Cancelled' && order.cancelReason && (
+                        <div>
+                            <Typography variant="h6" className="font-semibold mb-2 text-gray-700 border-b pb-2">
+                                Reason for Cancellation
+                            </Typography>
+                            <Typography className="text text-red-500">
+                                {order.cancelReason}
+                            </Typography>
+                        </div>
+                    )}
+
+                    <div className="flex flex-wrap justify-center gap-3 p-4 mb-6 rounded-md border border-gray-300 shadow">
+                            <Typography variant="h6" className="font-semibold mb-2 text-gray-700 border-b pb-2 ">
+                                Reason for Cancellation
+                            </Typography>
+                            <Typography className="text font-semibold text-red-500 mb-2">
+                                This is a sample reason for cancellation. The order was cancelled due to unforeseen circumstances.
+                            </Typography>
+                        </div>
+
                 </div>
             </div>
         </div>
