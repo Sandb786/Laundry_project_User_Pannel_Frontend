@@ -1,7 +1,7 @@
 import { Typography, Card, CardBody } from '@material-tailwind/react';
 import React, { useState } from 'react';
-import Show_myOrders from './Orders/Show_myOrders';
-import Show_order_history from './History/Show_order_history';
+import Show_myOrders from './Show_myOrders';
+import Show_order_history from './Show_order_history';
 
 export default function ListHome({ orders }) {
   const [activeTab, setActiveTab] = useState('orders');
@@ -31,11 +31,10 @@ export default function ListHome({ orders }) {
         <Typography
           variant="h5"
           onClick={() => setActiveTab('orders')}
-          className={`cursor-pointer pb-2 transition-all duration-200 ${
-            activeTab === 'orders'
+          className={`cursor-pointer pb-2 transition-all duration-200 ${activeTab === 'orders'
               ? 'border-b-4 border-cyan-800 text-cyan-800'
               : 'text-gray-700 hover:text-cyan-800'
-          }`}
+            }`}
         >
           Orders
         </Typography>
@@ -43,11 +42,10 @@ export default function ListHome({ orders }) {
         <Typography
           variant="h5"
           onClick={() => setActiveTab('history')}
-          className={`cursor-pointer pb-2 transition-all duration-200 ${
-            activeTab === 'history'
+          className={`cursor-pointer pb-2 transition-all duration-200 ${activeTab === 'history'
               ? 'border-b-4 border-cyan-800 text-cyan-800'
               : 'text-gray-700 hover:text-cyan-800'
-          }`}
+            }`}
         >
           History
         </Typography>

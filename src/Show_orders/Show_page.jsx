@@ -1,8 +1,9 @@
 import React from 'react'
 import { ArrowLeft } from 'lucide-react'
 import { Button, Typography } from '@material-tailwind/react'
-import OrderSummary from './OrderSummary'
 import List_home from './Order_list/List_home';
+import OrderDetail from './Order_details/OrderDetail';
+import OrderDetail_Home from './Order_details/OrderDetail_Home';
 
 
 export default function Show_page() 
@@ -25,8 +26,8 @@ export default function Show_page()
 
         {/* Orders Section */}
         <section className=''>
-          {/* <OrderSummary order={order}/> */}
-          <List_home orders={order}/>
+          {/* <List_home orders={order}/> */}
+          <OrderDetail_Home order={order[2]} />
         </section>
 
 
