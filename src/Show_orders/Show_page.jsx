@@ -26,7 +26,7 @@ export default function Show_page()
 
         {/* Orders Section */}
         <section className=''>
-          {/* <List_home orders={order}/> */}
+          <List_home orders={order}/>
           <OrderDetail_Home order={order[2]} />
         </section>
 

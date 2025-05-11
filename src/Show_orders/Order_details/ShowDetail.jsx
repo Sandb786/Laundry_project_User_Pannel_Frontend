@@ -21,7 +21,7 @@ export default function OrderDetail({ order }) {
                     </div>
                 </div>
 
-            <div className="overflow-y-auto  pr-0 max-h-[70vh] sm:max-h-[600px] mx-auto bg-white rounded-t-3xl  mt-1 px-4 sm:px-6">
+            <div className="overflow-y-auto pr-2 max-h-[70vh] sm:max-h-[600px] mx-auto bg-white rounded-t-3xl  mt-1 px-4 sm:px-6">
 
                 {/* Order Details */}
                 <div className="p-6 sm:p-10 space-y-10 mb-50">
