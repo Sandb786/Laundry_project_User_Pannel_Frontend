@@ -1,5 +1,5 @@
 import React from 'react';
-import { Typography } from "@material-tailwind/react";
+import { Button, Typography } from "@material-tailwind/react";
 
 export default function OrderDetail({ order }) {
     return (
@@ -123,35 +123,34 @@ export default function OrderDetail({ order }) {
                     </div>
 
                     {/* ========== Action Buttons ========== */}
-                    {/* <div className="pt-4 flex flex-wrap gap-3 justify-center mb-5">
-                        <button className="bg-blue-600 text-white px-5 py-2 rounded-lg text-sm shadow-md hover:bg-blue-700 transition">
-                            Contact Support
-                        </button>
-                        <button className="bg-gray-200 text-red-500 px-5 py-2 rounded-lg text-sm shadow-md font-bold">
+                    <div className="pt-4 flex flex-wrap gap-3 justify-center mb-5">
+
+                        {/* <button className="bg-blue-600 text-white px-5 py-2 rounded-lg text-sm shadow-md hover:bg-blue-700 transition">
+                            Modify
+                        </button> */}
+                        <Button variant='bodered' className="bg-gradient-to-tr from-cyan-700 to-cyan-500 text-white px-5 py-2 rounded-lg text-sm shadow-lg ">
+                            Modify Order
+                        </Button>
+
+                        <Button className="bg-gradient-to-tr from-slate-800 to-slate-700 text-white px-5 py-2 rounded-lg text-sm shadow-lg">
                             Cancel Order
-                        </button>
-                    </div> */}
+                        </Button>
+
+                    </div>
 
                     {/* ========== Cancel Reason ========== */}
                     {order.status === 'Cancelled' && order.cancelReason && (
-                        <div>
-                            <Typography variant="h6" className="font-semibold mb-2 text-gray-700 border-b pb-2">
+                        <div className="flex flex-wrap justify-center gap-3 p-4 mb-6 rounded-md border border-gray-300 shadow">
+                            <Typography variant="h6" className="font-semibold mb-2 text-gray-700 border-b pb-2 ">
                                 Reason for Cancellation
                             </Typography>
-                            <Typography className="text text-red-500">
+                            <Typography className="...">
                                 {order.cancelReason}
                             </Typography>
                         </div>
                     )}
 
-                    <div className="flex flex-wrap justify-center gap-3 p-4 mb-6 rounded-md border border-gray-300 shadow">
-                            <Typography variant="h6" className="font-semibold mb-2 text-gray-700 border-b pb-2 ">
-                                Reason for Cancellation
-                            </Typography>
-                            <Typography className="text font-semibold text-red-500 mb-2">
-                                This is a sample reason for cancellation. The order was cancelled due to unforeseen circumstances.
-                            </Typography>
-                        </div>
+
 
                 </div>
             </div>
