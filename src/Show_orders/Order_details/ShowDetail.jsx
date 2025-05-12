@@ -51,7 +51,7 @@ export default function ShowDetail()
                     {/* ========== Cancel Reason ========== */}
                     {order.status === 'Cancelled' && order.cancelReason && (
                         <div className="flex flex-wrap justify-center gap-3 p-4 mb-6 rounded-md border border-gray-300 shadow">
-                            <Typography variant="h6" className="font-semibold mb-2 text-gray-700 border-b pb-2 ">
+                            <Typography variant="h6" className="font-semibold mb-2 text-red-700 border-b pb-2 ">
                                 Reason for Cancellation
                             </Typography>
                             <Typography className="...">
