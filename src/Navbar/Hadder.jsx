@@ -54,13 +54,14 @@ export default function Header({ shopInfo }) {
       {isOpen && (
         <div
           ref={dropdownRef}
-          className="mt-4 w-full max-w-2xl mx-auto bg-white border border-gray-200 rounded-2xl shadow-lg p-6 transition-all"
+          className="mt-4 w-full max-w-2xl mx-auto bg-white border border-gray-200 rounded-2xl shadow-lg p-4 transition-all"
         >
           <Typography variant="h6" className="text-cyan-700 font-semibold mb-4 flex items-center gap-2">
             <BadgeInfo size={20} /> Laundry Shop Details
           </Typography>
 
-          <div className="grid grid-cols-2 gap-4 text-sm text-gray-700">
+          <div className="grid grid-cols-1 gap-4 text-sm text-slate-700">
+
             <p className="flex items-center gap-2">
               <User size={16} className="text-gray-500" />
               <span className="font-medium">Owner:</span> {shopInfo.ownerName}
@@ -81,6 +82,7 @@ export default function Header({ shopInfo }) {
               <MapPin size={16} className="mt-0.5 text-gray-500" />
               <span className="font-medium">Address:</span> {shopInfo.landmark}, {shopInfo.city} - {shopInfo.pincode}, {shopInfo.state}
             </p>
+
           </div>
 
           {/* Services */}
@@ -88,14 +90,15 @@ export default function Header({ shopInfo }) {
             <p className="text-gray-800 font-medium mb-2 flex items-center gap-2">
               <Wrench size={16} /> Services Offered:
             </p>
-            <ul className="grid grid-cols-2 gap-2 text-sm text-gray-600 list-disc list-inside ml-4">
+            <ul className="grid grid-cols-1 gap-2 text-sm text-gray-600 list-disc list-inside ml-4">
               {shopInfo.services?.map((service, index) => (
                 <li key={index}>
-                  {service.name} — ₹{service.price}
+                  {service.name} — Starting at: ₹{service.price}
                 </li>
               ))}
             </ul>
           </div>
+
         </div>
       )}
     </header>

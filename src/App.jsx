@@ -12,8 +12,8 @@ function App()
 {
   const shopInfo = {
     laundryName: "Mahawat Laundry",
-    ownerName: "Sandeep Mahawat",
-    laundryMobile: "1234567890",
+    ownerName: "Samir Dev",
+    laundryMobile: "7879243194",
     ownerPhone: "987654321",
     landmark: "Near Mr10 Squre",
     city: "Indore",
