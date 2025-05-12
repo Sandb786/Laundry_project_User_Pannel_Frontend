@@ -12,8 +12,6 @@ export default function OrderDetail_Home({order})
     <div>
         <div className=''>
              <ShowDetail order={order} />
-             {/* <ModifyOrderModal order={order} onClose={()=>{}}/> */}
-             {/* <CancelOrderModal order={order} /> */}
         </div>
     </div>
   )
