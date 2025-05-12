@@ -1,8 +1,6 @@
 import React from 'react'
 import { ArrowLeft } from 'lucide-react'
 import { Button, Typography } from '@material-tailwind/react'
-import List_home from './Order_list/List_home';
-import OrderDetail from './Order_details/OrderDetail';
 import OrderDetail_Home from './Order_details/OrderDetail_Home';
 
 
@@ -26,7 +24,6 @@ export default function Show_page()
 
         {/* Orders Section */}
         <section className=''>
-          {/* <List_home orders={order}/> */}
           <OrderDetail_Home order={order[2]} />
         </section>
 
@@ -42,6 +39,8 @@ function getOrders(count)
   const pickupTypes = ["Normal", "Urgent"];
   const statuses = ["Pending", "Rady for PickedUp", "In Process", "Delivered", "Cancelled"];
   const total=100;
+  
+  const remark="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
   const images = {
     "Normal Press": "/Color_Laundry/Normal_press.png",
     "Steam Press": "/Color_Laundry/Steam_press.png",
@@ -79,6 +78,7 @@ function getOrders(count)
       ordertype,
       pickupDrop,
       status,
+      remark,
       image,
       clothes
     };

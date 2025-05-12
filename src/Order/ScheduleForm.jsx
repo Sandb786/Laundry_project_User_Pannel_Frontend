@@ -1,7 +1,8 @@
 import { Button, Typography } from "@material-tailwind/react";
 import { useState, useEffect } from "react";
 
-export default function ScheduleForm({ order, setOrder }) {
+export default function ScheduleForm({ order, setOrder }) 
+{
   const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   const [selectedDate, setSelectedDate] = useState(0);
   const [selectedTime, setSelectedTime] = useState(5);

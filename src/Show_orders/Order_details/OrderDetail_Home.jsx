@@ -1,13 +1,19 @@
 import React from 'react'
-import Hadder from './Hadder'
 import ShowDetail from './ShowDetail'
+import ModifyOrderModal from './Container/ModifyOrderModal'
+import CancelOrderModal from './Container/CancelOrderModal'
+
+
+
 
 export default function OrderDetail_Home({order}) 
 {
   return (
     <div>
         <div className=''>
-             <ShowDetail order={order}/>
+             <ShowDetail order={order} />
+             {/* <ModifyOrderModal order={order} onClose={()=>{}}/> */}
+             {/* <CancelOrderModal order={order} /> */}
         </div>
     </div>
   )
