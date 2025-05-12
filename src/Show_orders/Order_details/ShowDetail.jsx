@@ -4,14 +4,17 @@ import { Button, Typography } from "@material-tailwind/react";
 import ModifyOrderModal from './Container/ModifyOrderModal'
 import Order_Info from './Container/Order_Info';
 import CancelOrderModal from './Container/CancelOrderModal';
+import { useLocation } from 'react-router-dom';
 
-export default function ShowDetail({ order }) 
+export default function ShowDetail() 
 {
     const [isModifyModalOpen, setIsModifyModalOpen] = useState(false);
     const [cancelOrder, setCancelOrder] = useState(false);
 
 
-   
+   const location=useLocation();
+    const order=location.state.order;
+    if (!order) return <p>No order data available</p>;
 
    
 

@@ -1,14 +1,11 @@
 import React from 'react'
 import { Card, CardBody, Typography } from "@material-tailwind/react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 export default function Show_order_history({ orders }) 
 {
-  // // Filter orders that are Delivered or Cancel (optional if already filtered outside)
-  // const historyOrders = orders.filter(
-  //   (order) => order.status === 'Delivered' || order.status === 'Cancel'
-  // );
-
+   const navigate=useNavigate(); 
   return (
     <div className="overflow-y-auto space-y-4 pr-2 max-h-[72vh] sm:max-h-[600px]">
       {orders.map((order, index) => (
@@ -18,6 +15,7 @@ export default function Show_order_history({ orders })
          // transition={{ duration: 0.2 }}
          animate={{ opacity: 1, y: 0 }}
          whileTap={{ scale: 0.85, rotate: 0.1, }}
+         onClick={() => {navigate(`/show_order_details/${order.ordertype}`,{state:{order}})}}
        >
         <Card
           key={index}

@@ -1,7 +1,10 @@
 import { Card, CardBody, Typography } from "@material-tailwind/react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
-export default function Show_myOrders({ orders }) {
+export default function Show_myOrders({ orders }) 
+{
+  const navigate=useNavigate();
   return (
     <div className="overflow-y-auto space-y-4 pr-2 max-h-[72vh] sm:max-h-[600px]">
       {orders.map((order, index) => (
@@ -11,6 +14,8 @@ export default function Show_myOrders({ orders }) {
           // transition={{ duration: 0.2 }}
           animate={{ opacity: 1, y: 0 }}
           whileTap={{ scale: 0.85, rotate: 0.1, }}
+
+          onClick={() => {navigate(`/show_order_details/${order.ordertype}`,{state:{order}})}}
         >
 
 
