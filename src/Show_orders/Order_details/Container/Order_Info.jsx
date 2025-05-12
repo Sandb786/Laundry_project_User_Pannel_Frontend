@@ -2,7 +2,7 @@ import React from 'react'
 import { Button, Typography } from "@material-tailwind/react";
 
 
-export default function Order_Info({ order, openModify ,openCancel}) {
+export default function Order_Info({ order, openModify, openCancel }) {
     return (
         <>
             {/* ========== Order Status ========== */}
@@ -13,14 +13,19 @@ export default function Order_Info({ order, openModify ,openCancel}) {
                 <div className="mt-2 sm:mt-0">
                     <Typography
                         variant="small"
-                        className={`border p-1 px-3 rounded-md font-semibold text-xs shadow-md
-                                    ${order.status === 'Pending' ? 'text-yellow-700 border-yellow-600 bg-yellow-100' :
-                                order.status === 'Confirmed' ? 'text-blue-700 border-b border-gray-400lue-600 bg-blue-100' :
-                                    order.status === 'Picked Up' ? 'text-indigo-700 border-indigo-600 bg-indigo-100' :
-                                        order.status === 'In Process' ? 'text-purple-700 border-purple-600 bg-purple-100' :
-                                            order.status === 'Delivered' ? 'text-green-700 border-green-600 bg-green-100' :
-                                                order.status === 'Cancelled' ? 'text-red-700 border-red-600 bg-red-100' :
-                                                    'text-gray-700 border-gray-600 bg-gray-100'}`}
+                        className={`border p-1 px-3 rounded-md font-semibold text- shadow-md
+                                    ${order.status === 'Pending'
+                                ? 'text-yellow-600 border-yellow-600' // Pending: Yellow
+                                : order.status === 'Rady for PickedUp'
+                                    ? 'text-blue-700 border-blue-700' // Picked Up: Blue
+                                    : order.status === 'In Process'
+                                        ? 'text-teal-700 border-teal-700' // In Process: Purple
+                                        : order.status === 'Delivered'
+                                            ? 'text-green-700 border-green-700' // Delivered: Green
+                                            : order.status === 'Cancelled'
+                                                ? 'text-red-600 border-red-600' // Cancelled: Red
+                                                : 'text-gray-600 border-gray-600' // Default for unknown status
+                            }`}
                     >
                         {order.status}
                     </Typography>
@@ -116,17 +121,22 @@ export default function Order_Info({ order, openModify ,openCancel}) {
             )}
 
             {/* ========== Action Buttons ========== */}
-            <div className="pt-4 flex flex-wrap gap-3 justify-center mb-5">
+            {!(order.status === 'Cancelled' || order.status === 'Delivered') && (
+                <div className="pt-4 flex flex-wrap gap-3 justify-center mb-5">
 
-                <Button onClick={() => openModify(true)} className="bg-gradient-to-tr from-cyan-700 to-cyan-500 text-white px-5 py-2 rounded-lg text-sm shadow-lg ">
-                    Modify Order
-                </Button>
+                    <Button onClick={() => openModify(true)} className="bg-gradient-to-tr from-cyan-700 to-cyan-500 text-white px-5 py-2 rounded-lg text-sm shadow-lg ">
+                        Modify Order
+                    </Button>
 
-                <Button onClick={() => openCancel(true)} className="bg-gradient-to-tr from-slate-800 to-slate-700 text-white px-5 py-2 rounded-lg text-sm shadow-lg">
-                    Cancel Order
-                </Button>
+                    <Button onClick={() => openCancel(true)} className="bg-gradient-to-tr from-slate-800 to-slate-700 text-white px-5 py-2 rounded-lg text-sm shadow-lg">
+                        Cancel Order
+                    </Button>
 
-            </div>
+                </div>
+            )}
+
+
+
 
 
         </>
