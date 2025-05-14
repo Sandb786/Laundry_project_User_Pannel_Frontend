@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import { Typography, Button } from "@material-tailwind/react";
+import { useNavigate } from "react-router-dom";
 
 export default function CancelOrderModal({ order, cancelClose }) {
     const [cancelReason, setCancelReason] = useState("");
     const cancellationFee = 20; // Update the cancellation fee as needed
+      const navigate=useNavigate(); 
+   
 
     const handleConfirmCancel = () => 
     {
@@ -13,6 +16,10 @@ export default function CancelOrderModal({ order, cancelClose }) {
                 status: "Cancelled",
                 cancelReason: cancelReason.trim()
             };
+
+            navigate(`/cancel`);
+
+            
             //onCancelConfirm(cancelledOrder);
         }
     };
@@ -52,6 +59,7 @@ export default function CancelOrderModal({ order, cancelClose }) {
                     <Button
                         onClick={handleConfirmCancel}
                         disabled={!cancelReason.trim()}
+                        
                         className="bg-gradient-to-tr from-red-700 to-red-500 text-white rounded-lg px-5 py-2 shadow-md disabled:opacity-50"
                     >
                         Confirm Cancellation (₹{cancellationFee})

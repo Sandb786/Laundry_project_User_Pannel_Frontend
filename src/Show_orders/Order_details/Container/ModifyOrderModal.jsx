@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Typography, Input, Textarea, Button } from "@material-tailwind/react";
+import { toast } from "react-toastify";
 
 export default function ModifyOrderModal({ order, Close }) 
 {
@@ -130,7 +131,7 @@ export default function ModifyOrderModal({ order, Close })
                         Cancel
                     </Button>
                     <Button
-                       
+                       onClick={() => { toast.success("Changes Save..."); Close(false); }}
                         className="bg-gradient-to-tr from-cyan-700 to-cyan-500 text-white rounded-lg px-5 py-2 shadow-md"
                     >
                         Save Changes

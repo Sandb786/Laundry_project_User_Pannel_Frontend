@@ -8,6 +8,7 @@ import Order_Home from './Order/Order_Home';
 import { ToastContainer } from 'react-toastify';
 import Show_page from './Show_orders/Show_page';
 import ShowDetail from './Show_orders/Order_details/ShowDetail';
+import CancelPaymentPage from './Show_orders/Order_details/Container/CancelPaymentSection';
 
 function App() 
 {
@@ -42,6 +43,9 @@ function App()
 
           <Route path='/myorders' element={<Show_page/>}/>
           <Route path="/show_order_details/:name" element={<ShowDetail />} />
+
+          <Route path='/cancel' element={<CancelPaymentPage/>}/>
+          
 
         </Routes>
         

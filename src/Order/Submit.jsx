@@ -12,9 +12,9 @@ export default function Submit({ order }) {
     try {
       //const response = await fetch("http://localhost:8083/laundryhub");
 
-      // if (!response.ok) {
-      //   throw new Error("Failed to place order");
-      // }
+      //  if (!response.ok) {
+      //    throw new Error("Failed to place order");
+      //  }
 
       toast.success("🎉 Order placed successfully!");
       
