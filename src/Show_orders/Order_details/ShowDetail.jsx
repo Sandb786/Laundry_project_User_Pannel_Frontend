@@ -26,7 +26,7 @@ export default function ShowDetail() {
 
             {/* Header */}
             <header className='bg-white sticky z-10 top-0 p-2 py-3 flex gap-5 shadow-sm'>
-                <a href="/myorders"> <Button className='text-black p-2'><ArrowLeft /></Button></a>
+                <a href="/"> <Button className='text-black p-2'><ArrowLeft /></Button></a>
                 <Typography variant='lead' className='text-2xl md:text-3xl'>
                     My Orders
                 </Typography>

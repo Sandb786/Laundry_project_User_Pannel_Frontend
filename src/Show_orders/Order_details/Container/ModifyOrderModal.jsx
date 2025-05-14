@@ -95,7 +95,7 @@ export default function ModifyOrderModal({ order, Close })
                 </div>
 
                 {/* Cloth Update Section */}
-                <div className="grid grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 gap-6">
                     <Typography className="font-medium text-gray-500">Add or Remove Clothes</Typography>
                     {order.clothes.map((cloth, idx) => (
                         <div key={idx} className="flex justify-between mb-2">
