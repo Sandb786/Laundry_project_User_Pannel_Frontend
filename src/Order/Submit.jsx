@@ -10,7 +10,7 @@ export default function Submit({ order }) {
   const handlePlaceOrder = async () => 
     {
     try {
-      //const response = await fetch("http://localhost:8083/laundryhub");
+     // const response = await fetch("http://localhost:8083/laundryhub");
 
       //  if (!response.ok) {
       //    throw new Error("Failed to place order");

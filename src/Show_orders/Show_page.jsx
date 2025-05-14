@@ -43,7 +43,7 @@ function getOrders(count)
   const statuses = ["Pending", "Rady for PickedUp", "In Process", "Delivered", "Cancelled"];
   const total=100;
   
-  const remark="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+  const remark="Please handle delicate fabrics like silk and chiffon with extra care, and avoid high-temperature ironing if possible. Thank you!.";
   const images = {
     "Normal Press": "/Color_Laundry/Normal_press.png",
     "Steam Press": "/Color_Laundry/Steam_press.png",
@@ -80,7 +80,7 @@ function getOrders(count)
       total: total + i,
       ordertype,
       pickupDrop,
-      cancelReason:" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      cancelReason:"Something urgent has come up at work and I won’t be able to coordinate the laundry pickup as planned. I genuinely appreciate your service and will definitely place another order once things settle..",
       status,
       remark,
       image,
